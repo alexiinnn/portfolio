@@ -1,0 +1,38 @@
+//
+   Created by Alexey on 27-Sep-16.
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        meta(name='viewport', content='width=device-width')
+        link(href='/style/app.css', rel='stylesheet')
+        link(href='/style/normalize.css', rel='stylesheet')
+        title Main page
+    body
+        .container
+            header.header
+                .social
+                    .avatar__picture
+            .avatar
+                block .avatar__name
+                    .avatar__name Alexey Nelipovich
+                    block .avatar__description
+                        .avatar__description Web developer. Personal website
+                nav.nav
+                    ul.nav__list
+                        li.nav__item
+            main.main
+
+        footer.footer
+            .conteiner
+                .nav-and-social.nav-and-social_footer
+                    nav.footer__nav
+                    .social.social_footer
+                        ul.social__list.social__list_footer
+                            li.social__item.social__item_footer.vk
+                            li.social__item.social__item_footer.github
+                            li.social__item.social__item_footer.linkedin
+                .footer__desc
+                    .footer__desc__from
+                    .footer__desc__copyright © Alexey Nelipovich | All rights reserved
