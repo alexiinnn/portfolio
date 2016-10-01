@@ -29,8 +29,7 @@ $.gulp.task('default', $.gulp.series(
     'copy:image',
     'copy:font',
     'css:foundation',
-    'sprite:svg',
-    'normalize'
+    'sprite:svg'
   ),
   $.gulp.parallel(
     'watch',
@@ -49,11 +48,5 @@ $.gulp.task('copy_img_font',
 $.gulp.task('sprite',
     $.gulp.series(
         'sprite:svg'
-    )
-);
-
-$.gulp.task('normalize',
-    $.gulp.series(
-        'normalize'
     )
 );
