@@ -12,7 +12,6 @@
     display: inline-block;
     font-family: 'BernierRegularRegular';
     padding: 70px 0;
-    font-size: 63px;
     position: relative;
 
     &:before,
@@ -23,7 +22,7 @@
       opacity: 0.2;
       width: 22px;
       height: 5px;
-      background: $color-font-section;
+      background: $color-font-black;
     }
 
     &:before {
@@ -35,5 +34,53 @@
       right: 0;
       margin-right: -40px;
     }
+
+
   }
+}
+
+.fz63{
+  font-size: 63px;
+}
+
+.fz35{
+  font-size: 35px;
+}
+
+.color-font-black{
+  color: $color-font-black;
+}
+
+.color-font-darkgrey{
+  color: $color-font-darkgray;
+}
+
+.work{
+  display: block;
+  //display: flex;
+  //justify-content: center;
+  height: 750px;
+}
+
+.work__desc{
+  display: block;
+  height: 100%;
+  background: $color-gray-back;
+  width: 50%;
+  text-align: center;
+
+
+}
+
+.work__desc__wrapper{
+  display: block;
+  width: 420px;
+  background: yellow;
+  height: 100%;
+}
+
+.work__list{
+  background: $color-coffee-back;
+  width: 50%;
+  text-align: center;
 }
