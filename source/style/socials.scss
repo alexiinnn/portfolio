@@ -1,0 +1,19 @@
+.social {
+  padding: 10px 15px;
+  text-align: left;
+}
+
+.social__list{
+  font-size: 0;
+}
+
+.social__item {
+  font-size: 22px;
+  display: inline-block;
+  opacity: .5;
+  padding: 10px;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+}

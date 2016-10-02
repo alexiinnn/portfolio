@@ -1,0 +1,54 @@
+/* font-family: "RobotoRegular"; */
+@font-face {
+  font-family: "RobotoRegular";
+  src: url("../font/RobotoRegular/RobotoRegular.eot");
+  src: url("../font/RobotoRegular/RobotoRegular.eot?#iefix")format("embedded-opentype"),
+  url("../font/RobotoRegular/RobotoRegular.woff") format("woff"),
+  url("../font/RobotoRegular/RobotoRegular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "RobotoLight"; */
+@font-face {
+  font-family: "RobotoLight";
+  src: url("../font/RobotoLight/RobotoLight.eot");
+  src: url("../font/RobotoLight/RobotoLight.eot?#iefix")format("embedded-opentype"),
+  url("../font/RobotoLight/RobotoLight.woff") format("woff"),
+  url("../font/RobotoLight/RobotoLight.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "RobotoMedium"; */
+@font-face {
+  font-family: "RobotoMedium";
+  src: url("../font/RobotoMedium/RobotoMedium.eot");
+  src: url("../font/RobotoMedium/RobotoMedium.eot?#iefix")format("embedded-opentype"),
+  url("../font/RobotoMedium/RobotoMedium.woff") format("woff"),
+  url("../font/RobotoMedium/RobotoMedium.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+/* font-family: "RobotoBold"; */
+@font-face {
+  font-family: "RobotoBold";
+  src: url("../font/RobotoBold/RobotoBold.eot");
+  src: url("../font/RobotoBold/RobotoBold.eot?#iefix")format("embedded-opentype"),
+  url("../font/RobotoBold/RobotoBold.woff") format("woff"),
+  url("../font/RobotoBold/RobotoBold.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* font-family: "BernierRegular"; */
+@font-face {
+  font-family: 'BernierRegularRegular';
+  src: url('../font/bernier/bernierregular-regular-webfont.eot');
+  src: url('../font/bernier/bernierregular-regular-webfont.eot?#iefix') format('embedded-opentype'),
+  url('../font/bernier/bernierregular-regular-webfont.woff2') format('woff2'),
+  url('../font/bernier/bernierregular-regular-webfont.woff') format('woff'),
+  url('../font/bernier/bernierregular-regular-webfont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import "font-awesome/scss/font-awesome";

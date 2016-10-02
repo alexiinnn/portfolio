@@ -1,7 +1,54 @@
-@import 'normalize.css';
+@import "fonts";
+@import "colors";
+@import "socials";
 
 body {
   margin: 0;
+  min-width: 1800px;
+  background: white;
+  color: black;
 }
-//
-//@import 'common/greating';
+
+ul, ol{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container__space-between{
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.container__center{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+
+//HEADER
+.header{
+  background: url("../img/lettering-portfolio.png") no-repeat 50% 50%,
+  url("../img/back-top.jpg") no-repeat;
+  background-size: auto, cover;
+  min-height: 650px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+
+@import "socials";
+@import "nav";
+@import "avatar";
+@import "triangles";
+
+
+//MAIN
+@import "main__works";
+
+//FOOTER

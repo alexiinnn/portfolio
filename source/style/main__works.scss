@@ -1,0 +1,39 @@
+@import "fonts";
+@import "colors";
+
+.section-name {
+  display: block;
+
+  text-align: center;
+  background: $color-milk-back url("../img/lettering-works.png") 50% 50% no-repeat;
+  background-size: auto;
+
+  .section-name__title {
+    display: inline-block;
+    font-family: 'BernierRegularRegular';
+    padding: 70px 0;
+    font-size: 63px;
+    position: relative;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      opacity: 0.2;
+      width: 22px;
+      height: 5px;
+      background: $color-font-section;
+    }
+
+    &:before {
+      margin-left: -40px;
+      left: 0;
+    }
+
+    &:after {
+      right: 0;
+      margin-right: -40px;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.avatar{
+  display: block;
+  text-align: center;
+}
+
+.avatar__picture {
+  margin: 0 auto;
+  display: block;
+  overflow: hidden;
+  width: 141px;
+  height: 141px;
+  border-radius: 50%;
+  & img {
+    margin-top: -10px;
+    width: 141px;
+    height: auto;
+  }
+}
+
+.avatar__name, .avatar__description{
+  display: block;
+}
+
+.avatar__name{
+  padding: 20px 0 5px;
+  font-family:"Roboto Medium";
+  font-size: 35px;
+}
+
+.avatar__description{
+  font-family:"Roboto Light";
+  font-size: 16px;
+  opacity: 0.8;
+}
+
