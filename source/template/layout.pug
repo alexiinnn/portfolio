@@ -1,5 +1,4 @@
 block variables
-include ./_includes/_mixins.pug
 
 doctype html
 html(lang='en')
@@ -22,6 +21,7 @@ html(lang='en')
 
         title #{title}
     body
+        include ./_includes/_mixins.pug
         include ./_includes/header.pug
         block content
 
