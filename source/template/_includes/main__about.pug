@@ -1,15 +1,24 @@
-main.main__works
-    section.section-name
-        +dashed-title('My Works', 'color-font-black', 'fz63')
-    section.work
-        .work__desc
-            .work__desc__wrapper
-                +dashed-title('Online education school Website', 'color-font-darkgray', 'fz35')
-                .work__desc__skills HTML, CSS, Javascript
-                a(href= "").work__desc__button
-                    i.fa.fa-link
-                    span.work__desc__button__text Review site
-        .sliders
+main.main__about
+    section.who-and-skills
+        .who
+            .who__title
+                +dashed-title('About me', 'color-font-black', 'fz63')
+            .who__desc
+                .work__desc__img
+                    img(src= "./assets/img/ava.jpg")
+                .work__desc__title
+                    +dashed-title('Who I am', 'color-font-darkgray', 'fz35')
+                .work__desc__text
+                    p.
+                        I am web developer from Minsk. I'm 26 years old.
+                        I do modern website and app development. I like work
+                        on interesting and modern projects.
+                    p.
+                        I did this website during online education Loftschool course.
+                        A bit later I'm going update my content here.
+                        But for now take a look at how here is cool and beautifully.
+
+        .skills
             .slider__big
                 .slider__display__big
                     ul.slider__list__big
@@ -48,7 +57,7 @@ main.main__works
                                 img(src='./assets/img/work-4.png')
                     .slider__arrow-up
                         i.fa.fa-angle-up
-    section.opinions
+    section.map-contact
         .opinions__section-name
             +dashed-title('What they Say about me', 'color-font-black', 'fz63')
         .quotes

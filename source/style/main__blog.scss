@@ -1,0 +1,64 @@
+@import "colors";
+
+.main__blog{
+  //margin-top: 50px;
+  padding-bottom: 140px;
+  display: flex;
+  justify-content: center;
+  font-family:RobotoRegular;
+  font-size: 16px;
+  color: $color-font-darkgray;
+}
+
+.sidebar{
+  flex: 30%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sidebar__list{
+  margin: 45px;
+  width: 270px;
+  text-align: right;
+}
+
+
+.sidebar__item{
+  padding: 20px;
+
+  &.active{
+    font-family:RobotoBold;
+    color: $color-green;
+    border-right: 3px solid $color-green;
+  }
+}
+
+
+
+.articles{
+  flex:70%;
+  margin-top: 45px;
+
+}
+
+.article{
+  //width: 70%;
+  margin: 45px 0;
+
+}
+
+.article__title{
+  font-family:BernierRegularRegular;
+  font-size: 35px;
+
+}
+
+.article__date{
+  color: #00bfa5;
+  opacity: .7;
+  margin-top: 15px;
+}
+
+.article__text{
+  width: 70%;
+}

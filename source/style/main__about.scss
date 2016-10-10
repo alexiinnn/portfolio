@@ -1,0 +1,43 @@
+.who-and-skills{
+  display: flex;
+
+}
+
+.who{
+  flex: 50%;
+  background: $color-about-left-back;
+  display: flex;
+}
+
+.who__title{
+  flex:50%;
+  text-align: center;
+  background: url("../img/lettering-about.png") 50% 0% no-repeat;
+  background-size: auto;
+}
+
+.who__desc{
+  flex:50%;
+}
+
+.who__desc__img{
+  display: block;
+  width: 440px;
+  height: 380px;
+  overflow: hidden;
+  & img{
+    width: 100%;
+
+  }
+}
+
+.skills{
+  flex: 50%;
+  background: $color-about-right-back;
+
+}
+
+.map-contact{
+  flex:100%;;
+  width: 100%;
+}

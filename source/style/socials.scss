@@ -1,5 +1,5 @@
 .social {
-  padding: 10px 15px;
+  margin: 10px 15px;
   text-align: left;
 }
 
@@ -8,12 +8,19 @@
 }
 
 .social__item {
+
   font-size: 22px;
   display: inline-block;
   opacity: .5;
-  padding: 10px;
+  width: 36px;
+  height: 36px;
   cursor: pointer;
+  line-height: 36px;
+  text-align: center;
+
   &:hover {
     opacity: 1;
   }
+
+
 }

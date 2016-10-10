@@ -1,5 +1,5 @@
 block variables
-
+- console.log(title)
 doctype html
 html(lang='en')
     head
@@ -12,6 +12,7 @@ html(lang='en')
 
         link(rel='stylesheet' href='/assets/css/foundation.css')
         link(rel='stylesheet' href='/assets/css/app.css')
+        //link(rel='stylesheet' href='/assets/css/'+cssFile+'.css')
         script(src='/assets/js/foundation.js' defer)
         script(src='/assets/js/app.js' defer)
 
@@ -19,7 +20,8 @@ html(lang='en')
         script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
         <![endif]-->
 
-        title #{title}
+        block title
+            title #{title}
     body
         include ./_includes/_mixins.pug
         include ./_includes/header.pug
@@ -31,15 +33,22 @@ html(lang='en')
                 .nav-and-social.nav-and-social_footer
                     nav.footer__nav
                         ul.footer__nav__list
-                            li.footer__nav__item My works
-                            li.footer__nav__item About
-                            li.footer__nav__item Blog
-                            li.footer__nav__item Authorization
-                    .social.social_footer
-                        ul.social__list.social__list_footer
-                            li.social__item.social__item_footer.vk
-                            li.social__item.social__item_footer.github
-                            li.social__item.social__item_footer.linkedin
+                            li.footer__nav__item
+                                a(href='./works.html') My works
+                            li.footer__nav__item
+                                a(href='./about.html') About
+                            li.footer__nav__item
+                                a(href='./blog.html') Blog
+                            li.footer__nav__item
+                                a(href='./index.html') Authorization
+                    .social.social__footer
+                        ul.social__list
+                            li.social__item.social__item-footer.vk
+                                i.fa.fa-vk
+                            li.social__item.social__item-footer.github
+                                i.fa.fa-github-alt
+                            li.social__item.social__item-footer.linkedin
+                                i.fa.fa-linkedin
                 .footer__desc
                     .footer__desc__from I'm web developer from Minsk and this site was developed during studing at online courses School Loftschool.
                     .footer__desc__copyright © Alexey Nelipovich | All rights reserved

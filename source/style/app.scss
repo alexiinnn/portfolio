@@ -1,12 +1,19 @@
 @import "fonts";
 @import "colors";
 @import "socials";
+//@import "../../bower_components/singularity/stylesheets/singularitygs";
+
 
 body {
   margin: 0;
   min-width: 1800px;
   background: white;
   color: black;
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 ul, ol{
@@ -50,5 +57,7 @@ ul, ol{
 
 //MAIN
 @import "main__works";
-
+@import "main__blog";
+@import "main__about";
 //FOOTER
+@import "footer";
