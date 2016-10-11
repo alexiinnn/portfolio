@@ -4,11 +4,11 @@ main.main__about
             .who__title
                 +dashed-title('About me', 'color-font-black', 'fz63')
             .who__desc
-                .work__desc__img
+                .who__desc__img
                     img(src= "./assets/img/ava.jpg")
-                .work__desc__title
+                .who__desc__title
                     +dashed-title('Who I am', 'color-font-darkgray', 'fz35')
-                .work__desc__text
+                .who__desc__text
                     p.
                         I am web developer from Minsk. I'm 26 years old.
                         I do modern website and app development. I like work
@@ -19,66 +19,63 @@ main.main__about
                         But for now take a look at how here is cool and beautifully.
 
         .skills
-            .slider__big
-                .slider__display__big
-                    ul.slider__list__big
-                        li.slider__item__big.active
-                            img(src= "./assets/img/work-1.png")
-                        li.slider__item__big
-                            img(src='./assets/img/work-2.png')
-                        li.slider__item__big
-                            img(src='./assets/img/work-3.png')
-                        li.slider__item__big
-                            img(src='./assets/img/work-4.png')
-            .slider__smalls
-                .slider__small
-                    .slider__display__small
-                        ul.slider__list__small
-                            li.slider__item__small
-                                img(src='./assets/img/work-1.png')
-                            li.slider__item__small
-                                img(src='./assets/img/work-2.png')
-                            li.slider__item__small
-                                img(src='./assets/img/work-3.png')
-                            li.slider__item__small.active
-                                img(src='./assets/img/work-4.png')
-                    .slider__arrow-down
-                        i.fa.fa-angle-down
-                .slider__small.slider__small-oposite
-                    .slider__display__small
-                        ul.slider__list__small
-                            li.slider__item__small
-                                img(src='./assets/img/work-1.png')
-                            li.slider__item__small.active
-                                img(src='./assets/img/work-2.png')
-                            li.slider__item__small
-                                img(src='./assets/img/work-3.png')
-                            li.slider__item__small
-                                img(src='./assets/img/work-4.png')
-                    .slider__arrow-up
-                        i.fa.fa-angle-up
+            .skills__title
+                +dashed-title('What can I do you for', 'color-font-darkgray', 'fz35')
+            .skills__desc.
+                I was most attracted Frontend development, but I also familiar with Backend,
+                and I can solve not complex Backend tasks.
+                But let's order.
+            .skill__div
+                .skill__div__title Frontend
+                ul.skill__div__list
+                    li.skill__div__item
+                        img(src= './assets/img/skill_round.png')
+                        span HTML5
+                    li.skill__div__item
+                        img(src= './assets/img/skill_round.png')
+                        span CSS3
+                    li.skill__div__item
+                        img(src= './assets/img/skill_round.png')
+                        span Javascript & jQuery
+            .skill__div
+                .skill__div__title Backend
+                ul.skill__div__list
+                    li.skill__div__item
+                        img(src= './assets/img/skill_round.png')
+                        span PHP
+                    li.skill__div__item
+                        img(src= './assets/img/skill_round.png')
+                        span mySQL
+                    li.skill__div__item
+                        img(src= './assets/img/skill_round.png')
+                        span Node.js & npm
+                    li.skill__div__item
+                        img(src= './assets/img/skill_round.png')
+                        span Mongo.db
+            .skill__div
+                .skill__div__title Workflow
+                ul.skill__div__list
+                    li.skill__div__item
+                        img(src= './assets/img/skill_round.png')
+                        span Git
+                    li.skill__div__item
+                        img(src= './assets/img/skill_round.png')
+                        span Gulp
+                    li.skill__div__item
+                        img(src= './assets/img/skill_round.png')
+                        span Bower
     section.map-contact
-        .opinions__section-name
-            +dashed-title('What they Say about me', 'color-font-black', 'fz63')
-        .quotes
-            .quote
-                +quote('Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!','./assets/img/ava-author-dima.jpg','Dmitry Kovalchuk','Loftschool founder')
-            .quote
-                +quote('Этот код выдержет любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!','./assets/img/ava-author-zar.jpg','Zar Zakharov','instructor, lecturer')
-        .contact-us
-            +dashed-title('Contact me', 'color-font-darkgrey', 'fz35')
-            form.contact-us__form(action='script/message.php', method='POST')
-                ul.contact-us__form__list
-                    li.contact-us__form__item
-                        input(type='text', name='name', placeholder='Name')
-                    li.contact-us__form__item
-                        input(type='email', name='email', placeholder='E-mail')
-                    li.contact-us__form__item
-                        textarea(rows='3', name='message', placeholder='Your message')
-                .contact-us__btns
-                    button.contact-us__btn.btn-send(type='submit' value="Submit") Send
-                    button.contact-us__btn.btn-clear(type='reset' value="Reset") Clear
-    .angle-up
-        i.fa.fa-angle-up
+        .contacts
+            .contacts__title
+            +dashed-title('Contacts', 'color-font-darkgray', 'fz35')
+            ul.contacts__list
+                li.contacts__item
+                    i.fa.fa-skype alexiy_n
+                li.contacts__item
+                    i.fa.fa-envelope alexii.nnn@gmail.com
+                li.contacts__item
+                    i.fa.fa-map-marker Minsk, Belarus
+
+
 
 

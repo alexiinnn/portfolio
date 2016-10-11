@@ -1,0 +1,68 @@
+.welcome{
+  height:100vh;
+  width: 100%;
+  background: url(../img/back.jpg) 50% 50% no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-font-darkgray;
+}
+
+.welcome__menu{
+  border-radius: 5px;
+  background-color: rgb(252, 252, 252);
+  opacity: 0.85;
+  width: 380px;
+  height: 395px;
+  text-align: center;
+  padding:40px;
+  position: relative;
+}
+.welcome__nav{
+  font-family:RobotoMedium;
+  font-size: 16px;
+  color: $color-font-white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  &.contact-us__btn {
+    display: inline-block;
+    max-width: 100%;
+
+    & a {
+      vertical-align: middle;
+      line-height: 50px;
+    }
+  }
+}
+
+.social__welcome{
+  margin-top: 30px;
+  text-align: center;
+}
+
+.nav__item-welcome{
+  width: auto;
+}
+
+.nav__item-welcome a{
+  color: $color-font-white;
+  text-decoration: none;
+}
+
+
+footer.footer.footer-welcome{
+  background: transparent;
+}
+
+.footer__desc.footer__desc-welcome{
+  border: none;
+}
+
+.footer__desc__copyright-welcome.footer__desc__copyright {
+  margin: 0 auto;
+}

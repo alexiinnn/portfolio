@@ -1,6 +1,7 @@
 .who-and-skills{
   display: flex;
-
+  font-family:RobotoRegular;
+  font-size: 16px;
 }
 
 .who{
@@ -14,14 +15,16 @@
   text-align: center;
   background: url("../img/lettering-about.png") 50% 0% no-repeat;
   background-size: auto;
+
 }
 
 .who__desc{
   flex:50%;
+  padding:20px;
 }
 
 .who__desc__img{
-  display: block;
+  margin: 10px auto;
   width: 440px;
   height: 380px;
   overflow: hidden;
@@ -31,13 +34,88 @@
   }
 }
 
-.skills{
-  flex: 50%;
-  background: $color-about-right-back;
+.who__desc__title{
+  text-align: center;
+}
+
+.who__desc__text{
+  text-align: left;
+  width: 440px;
+  margin: 10px auto;
+
 
 }
 
+.skills{
+  flex: 50%;
+  background: $color-about-right-back;
+  padding:20px;
+}
+
+.skills__title{
+  text-align: center;
+}
+
+.skills__desc{
+  margin: 0 30px;
+
+}
+
+.skill__div{
+  display: block;
+  margin: 30px;
+}
+
+.skill__div__title{
+  color: $color-font-darkgray;
+  font-family:RobotoMedium;
+  font-size: 28px;
+  margin-bottom:20px;
+}
+
+.skill__div__item{
+  display: inline-block;
+  position: relative;
+  margin-right: 30px;
+}
+
+.skill__div__item span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .map-contact{
-  flex:100%;;
-  width: 100%;
+  height: 1100px;
+  background: url(../img/map.png) 50% 50% no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contacts{
+  border-radius: 5px;
+  background-color: rgb(252, 252, 252);
+  opacity: 0.85;
+  width: 380px;
+  height: 290px;
+  text-align: center;
+  color: $color-font-darkgray;
+}
+
+.contacts__list{
+  text-align: left;
+}
+
+.contacts__item{
+  margin: 10px 50px 30px;
+
+  &i{
+    font-size: 50px;
+    text-align: center;
+  }
+
+
 }

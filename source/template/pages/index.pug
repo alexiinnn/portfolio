@@ -1,6 +1,54 @@
-extends ../layout
-block variables
-    - var title = 'Home'
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
 
-block content
-    //include ../_includes/main__works
+        //- favicon block start
+        //- favicon block end
+
+        link(rel='stylesheet' href='/assets/css/foundation.css')
+        link(rel='stylesheet' href='/assets/css/app.css')
+
+        script(src='/assets/js/foundation.js' defer)
+        script(src='/assets/js/app.js' defer)
+
+        <!--[if lt IE 9]>
+        script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+        <![endif]-->
+
+
+        title Porfolio - Alexey Nelipovich
+    body
+
+        include ../_includes/_mixins.pug
+
+        main.welcome
+            .welcome__menu
+                .avatar
+                    .avatar__picture
+                        img(src="assets/img/ava.jpg")
+                    .avatar__name Alexey Nelipovich
+                    .avatar__description Web developer personal website
+                .social.social__welcome
+                    ul.social__list
+                        li.social__item.social__item-footer.vk
+                            i.fa.fa-vk
+                        li.social__item.social__item-footer.github
+                            i.fa.fa-github-alt
+                        li.social__item.social__item-footer.linkedin
+                            i.fa.fa-linkedin
+                .welcome__nav
+                    ul.nav__list.nav__list-welcome.contact-us__btns
+                        li.nav__item.nav__item-welcome.contact-us__btn
+                            a(href='./works.html') Work
+                        li.nav__item.nav__item-welcome.contact-us__btn
+                            a(href='./about.html') About
+                        li.nav__item.nav__item-welcome.contact-us__btn
+                            a(href='./blog.html') Blog
+
+        footer.footer.footer-welcome
+            .conteiner
+                .footer__desc.footer__desc-welcome
+                    .footer__desc__copyright.footer__desc__copyright-welcome © Alexey Nelipovich | All rights reserved
