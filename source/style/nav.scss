@@ -3,15 +3,15 @@ $color-main: #13bda7;
 $color-active: #FFF;
 $color-link: #FFF;
 
-$button-height: 27px;
-$button-width: 35px;
+$button-height: 30px;
+$button-width: 30px;
 
 .button_container {
   //position: fixed;
   //top: 5%;
   //right: 2%;
   display: inline-block;
-  padding: 10px 15px;
+  margin: 10px 15px;
   height: $button-height;
   width: $button-width;
   cursor: pointer;
@@ -42,14 +42,14 @@ $button-width: 35px;
   span {
     background: $color-active;
     border: none;
-    height: 5px;
+    height: 3px;
     //width: 100%;
     width: $button-width;
     //position: absolute;
     //top: 0;
     //left: 0;
     display: block;
-    margin-top: 5px;
+    margin-top: 8px;
     transition:  all .35s ease;
     cursor: pointer;
 

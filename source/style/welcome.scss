@@ -7,18 +7,61 @@
   justify-content: center;
   align-items: center;
   color: $color-font-darkgray;
+  position: relative;
 }
 
-.welcome__menu{
+.welcome__wrapper{
+  perspective: 1000px;
+  //position: relative;
+  width: 380px;
+  height: 395px;
+  //&:hover .welcome__menu{
+  //  transform: rotateY(180deg);
+  //
+  //}
+}
+
+.welcome__menu {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  text-align: center;
+
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+
+}
+
+.welcome__menu-frontside, .welcome__menu-backside{
+  position: absolute;
+  top:0;
+  left: 0;
   border-radius: 5px;
   background-color: rgb(252, 252, 252);
   opacity: 0.85;
-  width: 380px;
-  height: 395px;
-  text-align: center;
+  //width: 380px;
+  //height: 395px;
+  width: 100%;
+  height: 100%;
   padding:40px;
-  position: relative;
 }
+
+.welcome__menu-frontside{
+  transform: rotateY(0deg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.welcome__menu-backside{
+  padding: 0;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+
+}
+
 .welcome__nav{
   font-family:RobotoMedium;
   font-size: 16px;
@@ -52,6 +95,22 @@
 .nav__item-welcome a{
   color: $color-font-white;
   text-decoration: none;
+}
+
+.auth__btns{
+}
+
+.auth__toggle-btn {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  width: 178px;
+  height: 43px;
+  background: transparent;
+  color: $color-font-white;
+  cursor: pointer;
 }
 
 
