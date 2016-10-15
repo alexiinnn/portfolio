@@ -2,7 +2,7 @@
 .triangle {
   display: block;
   margin-top: -150px;
-  margin-bottom: -4px;
+  //margin-bottom: -4px;
   //box-sizing: border-box;
   position: relative;
 }
@@ -40,15 +40,16 @@
   fill: $color-font-white;
 }
 
-.svg-triangle__color__about{
-  &:first-child{
+.triangle__item {
+
+  &:first-child .svg-triangle__color__about {
     fill: $color-about-left-back;
   }
-  &:last-child{
+  &:last-child .svg-triangle__color__about {
     fill: $color-about-right-back;
   }
-}
 
+}
 
 
 .angle-down{
