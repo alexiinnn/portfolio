@@ -8,9 +8,11 @@
   flex: 50%;
   background: $color-about-left-back;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .who__title{
+  min-width: 400px;
   flex:50%;
   text-align: center;
   background: url("../img/lettering-about.png") 50% 0% no-repeat;
@@ -21,12 +23,14 @@
 .who__desc{
   flex:50%;
   padding:20px;
+  min-width: 400px;
 }
 
 .who__desc__img{
   margin: 10px auto;
-  width: 440px;
-  height: 380px;
+  max-width: 440px;
+  width: 100%;
+  height: auto;
   overflow: hidden;
   & img{
     width: 100%;
@@ -40,9 +44,9 @@
 
 .who__desc__text{
   text-align: left;
-  width: 440px;
+  width: 100%;
   margin: 10px auto;
-
+  max-width: 440px;
 
 }
 
@@ -97,25 +101,29 @@
 
 .contacts{
   border-radius: 5px;
-  background-color: rgb(252, 252, 252);
-  opacity: 0.85;
+  background-color: rgba(252, 252, 252, 0.85);
   width: 380px;
   height: 290px;
   text-align: center;
   color: $color-font-darkgray;
+  padding: 0 30px;
 }
 
 .contacts__list{
   text-align: left;
 }
 
-.contacts__item{
-  margin: 10px 50px 30px;
+.contacts__item {
+  margin: 10px 0 30px;
+  font-size: 16px;
+  font-family: RobotoMedium;
+  color: $color-green;
 
-  &i{
-    font-size: 50px;
+  & i.fa {
+    font-size: 24px;
+    width: 24px;
     text-align: center;
+    margin: 0 10px;
   }
-
 
 }
