@@ -18,7 +18,7 @@ html(lang='en')
         <![endif]-->
 
         title Porfolio - Alexey Nelipovich
-    body
+    body.welcome-fullscreen
 
         include ../_includes/_mixins.pug
 
@@ -29,7 +29,7 @@ html(lang='en')
                         .avatar
                             .avatar__picture
                                 img(src="assets/img/ava.jpg")
-                            .avatar__name Alexey Nelipovich
+                            .avatar__name.avatar__name-welcome Alexey Nelipovich
                             .avatar__description Web developer personal website
                         .social.social__welcome
                             ul.social__list
@@ -47,25 +47,29 @@ html(lang='en')
                                     a(href='./about.html') About
                                 li.nav__item.nav__item-welcome.contact-us__btn
                                     a(href='./blog.html') Blog
-                    .welcome__menu-backside
-                        +dashed-title('Log in', 'color-font-darkgray', 'fz35')
+                    .welcome__menu-backside.auth
+                        .auth__title
+                            +dashed-title('Log in', 'color-font-darkgray', 'fz35')
                         form.auth__form(action='script/login.php', method='POST')
-                            ul.contact-us__form__list
-                                li.contact-us__form__item
-                                    input(type='text', name='login', placeholder='Login')
-                                li.contact-us__form__item
-                                    input(type='password', name='password', placeholder='password')
+                            .form__item.auth__form__item.auth__form__item-login
+                                input(type='text', name='login', placeholder='Login')
+
+                            .form__item.auth__form__item.auth__form__item-password
+                                input(type='password', name='password', placeholder='Password')
+
+
                             .auth__human
                                 input#human-checkbox.auth__human__checkbox(type='checkbox', name='human', value='human')
                                 label(for='human-checkbox') I'm human
-                            .bot-check
-                                p Are you sure you're not bot?
-                                label.bot-check__yes
-                                    input(type='radio', name='yes', value='true')
-                                    | Yes
-                                label.bot-check__no
-                                    input(type='radio', name='no', value='false')
-                                    | Not sure
+                            .auth__bot-check
+                                .auth__bot-check__desc Are you sure you're not bot?
+                                .auth__bot-check__case
+                                    .auth__bot-check__item
+                                        input#bot-check__yes(name='bot-check', type='radio', value='true')
+                                        label(for='bot-check__yes') Yes
+                                    .auth__bot-check__item
+                                        input#bot-check__no(name='bot-check', type='radio', value='true')
+                                        label(for='bot-check__no') No
                         .auth__btns
                                 button.contact-us__btn.btn-home Home
                                 button.contact-us__btn.btn-clear(type='submit' value="Submit") Log in
@@ -74,4 +78,7 @@ html(lang='en')
         footer.footer.footer-welcome
             .conteiner
                 .footer__desc.footer__desc-welcome
-                    .footer__desc__copyright.footer__desc__copyright-welcome © Alexey Nelipovich | All rights reserved
+                    .footer__desc__copyright.footer__desc__copyright-welcome
+                        .footer__desc-welcome-name © Alexey Nelipovich
+                            span.hide-mobile  |
+                        .footer__desc-welcome-made Designed with Loftschool | 2016

@@ -1,18 +1,16 @@
 @import "fonts";
 @import "colors";
+@import "media-breakpoints";
 
 
-
-//.main{
-//  display: flex;
-//}
+.main__works{
+  font-size: 16px;
+  @include responsive(tablet){
+    font-size: 14px;
+  }
+}
 
 .section-name {
-  //flex: 0 0 100%;
-  //flex: auto;
-  //display: flex;
-  //align-items: center;
-  //justify-content: center;
   text-align: center;
   background: $color-milk-back url("../img/lettering-works.png") 50% 50% no-repeat;
   background-size: auto;
@@ -24,12 +22,14 @@
   font-family: 'BernierRegularRegular';
   padding: 40px 0;
   position: relative;
+  margin: 40px;
 
   &:before,
   &:after {
     content: '';
     position: absolute;
     top: 50%;
+    transform: translateY(-50%);
     opacity: 0.2;
     width: 22px;
     height: 5px;
@@ -45,41 +45,21 @@
     right: 0;
     margin-right: -40px;
   }
-
-
-}
-
-.fz63{
-  font-size: 63px;
-}
-
-.fz35{
-  font-size: 35px;
-}
-
-.color-font-black{
-  color: $color-font-black;
-}
-
-.color-font-darkgrey{
-  color: $color-font-darkgray;
 }
 
 .work{
   display: flex;
-
-
+  flex-direction: column;
+  height: 750px;
 }
 
 .work__desc{
-  flex: 1;
-  //height: 100%;
-  background: $color-gray-back;
+  flex: 100%;
   width: 50%;
+  background: $color-gray-back;
   padding: 0 auto;
   display: flex;
   align-items: center;
-  font-size: 16px;
   font-family:RobotoMedium;
 }
 
@@ -94,8 +74,6 @@
   border-opacity:0.3;
   border-top: solid 2px rgba($color-green, 0.3);
   border-bottom: solid 2px rgba($color-green, 0.3);
-
-
 }
 
 .work__desc__wrapper{
@@ -122,19 +100,10 @@
   padding-left: 10px;
 }
 
-.sliders{
-  flex: 1;
-
-  //display: block;
-  background: $color-coffee-back;
-  //width: 50%;
-  text-align: center;
-  //height: 100%;
-}
-
 .slider__big{
   display: block;
   height: 525px;
+  background: $color-coffee-back;
 
 }
 
@@ -146,7 +115,7 @@
 
 .slider__smalls{
   display: flex;
-  height: 226px;
+  height: 225px;
   //background: blue;
 }
 
@@ -266,7 +235,6 @@
   display: flex;
   justify-content: center;
   font-family:RobotoRegular;
-  font-size: 16px;
   margin-bottom:70px;
 }
 
@@ -320,10 +288,11 @@
 
 .contact-us__form__item input, .contact-us__form__item textarea{
   width: 340px;
+  height: 45px;
   line-height: 45px;
   margin: 0 20px 20px;
   border-radius: 5px;
-  font-size: 16px;
+  
   color: $color-font-black;
   border: none;
   font-family:RobotoRegular;
@@ -339,7 +308,7 @@
 }
 
 .contact-us__btn{
-  font-size: 16px;
+  
   display: inline-block;
   box-sizing: border-box;
   width: 50%;
@@ -351,6 +320,10 @@
   color: $color-font-white;
   font-family:RobotoMedium;
   cursor: pointer;
+  font-size: 16px;
+  @include responsive(tablet){
+    font-size: 14px;
+  }
 
   &:hover{
     background: rgba($color-green, 0.7);

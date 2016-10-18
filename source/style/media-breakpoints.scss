@@ -1,0 +1,21 @@
+$break-s: 768px;
+$break-m: 992px;
+$break-l: 1200px;
+
+@mixin responsive($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: $break-s) {
+      @content;
+    }
+  }
+  @else if $media == tablet {
+    @media only screen and (max-width: $break-m) {
+      @content;
+    }
+  }
+  @else if $media == netbook {
+    @media only screen and (min-width: $break-l) {
+      @content;
+    }
+  }
+}

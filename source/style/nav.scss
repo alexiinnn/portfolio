@@ -140,6 +140,10 @@ $button-width: 30px;
 
         &:after,
         &:before{
+          @include responsive(tablet){
+            display: none;
+          }
+
           content: '';
           position: absolute;
           bottom: 50%;

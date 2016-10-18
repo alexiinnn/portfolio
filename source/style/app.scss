@@ -1,12 +1,13 @@
 @import "fonts";
 @import "colors";
 @import "socials";
+@import "media-breakpoints";
 //@import "../../bower_components/singularity/stylesheets/singularitygs";
 
 
 body {
   margin: 0;
-  //min-width: 1800px;
+  min-width: 320px;
   background: white;
   color: black;
   position: relative;
@@ -22,6 +23,10 @@ ul, ol{
   margin: 0;
 }
 
+*:focus {
+  outline: none;
+}
+
 .container__space-between{
   display: flex;
   text-align: center;
@@ -32,6 +37,30 @@ ul, ol{
   display: flex;
   text-align: center;
   justify-content: center;
+}
+
+//mixins
+.fz63{
+  font-size: 63px;
+  @include responsive(tablet){
+    font-size: 49px;
+  }
+}
+
+.fz35{
+  font-size: 35px;
+
+  @include responsive(tablet){
+    font-size: 30px;
+  }
+}
+
+.color-font-black{
+  color: $color-font-black;
+}
+
+.color-font-darkgrey{
+  color: $color-font-darkgray;
 }
 
 
@@ -48,7 +77,6 @@ ul, ol{
   height: 100vh;
 }
 
-
 @import "socials";
 @import "nav";
 @import "avatar";
@@ -60,7 +88,8 @@ ul, ol{
 @import "main__blog";
 @import "main__about";
 @import "welcome";
+
+
 //FOOTER
 @import "footer";
-
 

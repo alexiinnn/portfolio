@@ -11,12 +11,18 @@
   font-family:RobotoLight;
 }
 
-.nav-and-social{
+.nav-and-social_footer{
   font-family:RobotoMedium;
   padding: 5px 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include responsive(tablet){
+    display: block;
+    text-align: center;
+  }
+
 }
 
 .footer__nav__item{
@@ -35,6 +41,10 @@
 
 .social__footer{
   margin-right:0;
+
+  @include responsive(tablet){
+    text-align: center;
+  }
 }
 
 .social__item-footer{
@@ -46,6 +56,14 @@
 
     color: rgba($color-font-black, 0.85);
   }
+
+  &:first-child{
+    @include responsive(tablet){
+      margin-left:-10px;
+    }
+  }
+
+
 }
 
 .footer__desc {
@@ -54,6 +72,11 @@
   border-top: 1px solid rgba($color-font-white, 0.1);
   padding: 20px 30px 15px;
   color: rgba($color-font-white, 0.5);
+
+  @include responsive(tablet){
+    display: block;
+    text-align: center;
+  }
 }
 
 .footer__desc__from, .footer__desc__copyright{
@@ -63,10 +86,18 @@
 
 .footer__desc__from{
   width:500px;
+  display: inline-block;
+  text-align: left;
+  line-height: 22px;
+
+  @include responsive(tablet){
+    text-align: center;
+  }
 }
 
 .footer__desc__copyright{
-  float: right;
+  //float: right;
   vertical-align: middle;
   line-height:30px;
+  padding: 10px 0 0;
 }
