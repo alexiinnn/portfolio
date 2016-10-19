@@ -13,9 +13,13 @@ $break-l: 1200px;
       @content;
     }
   }
-  @else if $media == netbook {
-    @media only screen and (min-width: $break-l) {
+  @else if $media == laptop {
+    @media only screen and (max-width: $break-l) {
       @content;
     }
   }
 }
+
+$footHeight-l: 146px;
+$footHeight-m: 239px;
+$footHeight-s: 254px;

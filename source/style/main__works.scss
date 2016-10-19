@@ -220,14 +220,14 @@
   background-position: 50% 50%;
   background-size: cover;
   text-align: center;
-  padding-bottom: 148px;
+  padding-bottom: $footHeight-l;
 
   @include responsive(tablet){
-    padding-bottom: 239px;
+    padding-bottom: $footHeight-m;
   }
 
   @include responsive(mobile){
-    padding-bottom: 254px;
+    padding-bottom: $footHeight-s;
   }
 
 }

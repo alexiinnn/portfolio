@@ -1,6 +1,13 @@
+@import "media-breakpoints";
+
+
 .social {
   margin: 10px 15px;
   text-align: left;
+
+  @include responsive(mobile){
+    margin: 10px 5px;
+  }
 }
 
 .social__list{
@@ -22,5 +29,11 @@
     opacity: 1;
   }
 
-
+  &-top{
+    @include responsive(mobile){
+      font-size: 25px;
+      width: 50px;
+      height: 50px;
+    }
+  }
 }

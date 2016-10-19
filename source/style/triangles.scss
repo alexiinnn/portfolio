@@ -47,6 +47,10 @@
   }
   &:last-child .svg-triangle__color__about {
     fill: $color-about-right-back;
+
+    @include responsive(tablet){
+      fill: $color-about-left-back;
+    }
   }
 
 }

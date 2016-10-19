@@ -2,6 +2,12 @@
   display: flex;
   font-family:RobotoRegular;
   font-size: 16px;
+  flex-wrap: wrap;
+
+  @include responsive(tablet){
+    font-size: 14px;
+  }
+
 }
 
 .who{
@@ -9,33 +15,52 @@
   background: $color-about-left-back;
   display: flex;
   flex-wrap: wrap;
+  align-content: flex-start;
+
+  @include responsive(tablet){
+    flex:100%;
+  }
 }
 
 .who__title{
-  min-width: 400px;
   flex:50%;
   text-align: center;
   background: url("../img/lettering-about.png") 50% 0% no-repeat;
   background-size: auto;
 
+  @include responsive(laptop){
+    flex:100%;
+    padding: 10px;
+  }
 }
 
 .who__desc{
   flex:50%;
   padding:20px;
-  min-width: 400px;
+  margin: 0 auto;
+  max-width: 480px;
+
+  @include responsive(laptop){
+    flex:100%;
+    max-width: 460px;
+    padding: 10px;
+  }
+
+  @include responsive(tablet){
+    max-width: 490px;
+  }
 }
 
 .who__desc__img{
   margin: 10px auto;
-  max-width: 440px;
   width: 100%;
   height: auto;
   overflow: hidden;
   & img{
     width: 100%;
-
   }
+
+
 }
 
 .who__desc__title{
@@ -46,7 +71,6 @@
   text-align: left;
   width: 100%;
   margin: 10px auto;
-  max-width: 440px;
 
 }
 
@@ -54,6 +78,13 @@
   flex: 50%;
   background: $color-about-right-back;
   padding:20px;
+  text-align: left;
+
+  @include responsive(tablet){
+    flex: 100%;
+    text-align: center;
+
+  }
 }
 
 .skills__title{
@@ -61,13 +92,16 @@
 }
 
 .skills__desc{
-  margin: 0 30px;
-
+  @include responsive(tablet){
+    max-width: 470px;
+    text-align: left;
+    margin: 0 auto;
+  }
 }
 
 .skill__div{
   display: block;
-  margin: 30px;
+  margin: 30px 0;
 }
 
 .skill__div__title{
@@ -75,42 +109,85 @@
   font-family:RobotoMedium;
   font-size: 28px;
   margin-bottom:20px;
+
+  @include responsive(tablet){
+    font-size: 21px;
+  }
+}
+
+.skill__div__list{
+  margin-left:-15px;
+
+  @include responsive(tablet){
+    margin-left: 0;
+  }
 }
 
 .skill__div__item{
   display: inline-block;
   position: relative;
-  margin-right: 30px;
+  margin: 15px;
+
+  @include responsive(mobile){
+    margin: 10px;
+  }
 }
 
 .skill__div__item span {
   position: absolute;
+  text-align: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
 .map-contact{
-  height: 1100px;
+  height: calc(100vh + #{$footHeight-l});
   background: url(../img/map.png) 50% 50% no-repeat;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: $footHeight-l;
+
+  @include responsive(tablet){
+    height: calc(100vh + #{$footHeight-m});
+    padding-bottom: $footHeight-m;
+  }
+
+  @include responsive(mobile){
+    height: calc(100vh + #{$footHeight-s});
+    padding-bottom: $footHeight-s;
+    align-items: flex-start;
+  }
 }
 
 .contacts{
   border-radius: 5px;
   background-color: rgba(252, 252, 252, 0.85);
   width: 380px;
-  height: 290px;
+  //height: 290px;
   text-align: center;
   color: $color-font-darkgray;
   padding: 0 30px;
+
+  @include responsive(tablet){
+    width: 350px;
+  }
+
+  @include responsive(mobile){
+    width: 100%;
+    border-radius: 0;
+  }
 }
 
 .contacts__list{
   text-align: left;
+
+  @include responsive(mobile){
+    width: 300px;
+    margin: 0 auto;
+  }
 }
 
 .contacts__item {

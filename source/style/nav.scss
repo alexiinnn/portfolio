@@ -11,13 +11,17 @@ $button-width: 30px;
   //top: 5%;
   //right: 2%;
   display: inline-block;
-  margin: 10px 15px;
+  margin: 10px 20px;
   height: $button-height;
   width: $button-width;
   cursor: pointer;
   z-index: 100;
   transition: opacity .25s ease;
   opacity: .5;
+
+  @include responsive(mobile){
+    margin: 5px 15px;
+  }
 
   &:hover {
     opacity: 1;

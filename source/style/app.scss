@@ -40,11 +40,47 @@ ul, ol{
 }
 
 //mixins
+.section-name__title {
+  display: inline-block;
+  font-family: 'BernierRegularRegular';
+  padding: 40px 0;
+  position: relative;
+  margin: 0 40px;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.2;
+    width: 22px;
+    height: 5px;
+    background: $color-font-black;
+  }
+
+  &:before {
+    margin-left: -40px;
+    left: 0;
+  }
+
+  &:after {
+    right: 0;
+    margin-right: -40px;
+  }
+}
+
 .fz63{
   font-size: 63px;
   @include responsive(tablet){
     font-size: 49px;
   }
+
+  @include responsive(mobile){
+    font-size: 35px;
+    line-height: 45px;
+  }
+
 }
 
 .fz35{
@@ -52,6 +88,7 @@ ul, ol{
 
   @include responsive(tablet){
     font-size: 30px;
+    padding:20px 0;
   }
 }
 
