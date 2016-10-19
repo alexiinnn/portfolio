@@ -17,40 +17,15 @@
   padding-bottom: 30px;
 }
 
-.section-name__title {
-  display: inline-block;
-  font-family: 'BernierRegularRegular';
-  padding: 40px 0;
-  position: relative;
-  margin: 40px;
-
-  &:before,
-  &:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0.2;
-    width: 22px;
-    height: 5px;
-    background: $color-font-black;
-  }
-
-  &:before {
-    margin-left: -40px;
-    left: 0;
-  }
-
-  &:after {
-    right: 0;
-    margin-right: -40px;
-  }
-}
-
 .work{
   display: flex;
   flex-direction: column;
-  height: 750px;
+  height: calc(225px + 525px);
+  flex-wrap: wrap;
+
+  @include responsive(tablet){
+    height: auto;
+  }
 }
 
 .work__desc{
@@ -61,6 +36,11 @@
   display: flex;
   align-items: center;
   font-family:RobotoMedium;
+
+  @include responsive(tablet){
+    order:2;
+    width: 100%;
+  }
 }
 
 .work__desc__skills{
@@ -69,7 +49,7 @@
   text-transform: uppercase;
   padding: 15px;
   position: relative;
-  width: 420px;
+  max-width: 420px;
   text-align: center;
   border-opacity:0.3;
   border-top: solid 2px rgba($color-green, 0.3);
@@ -78,9 +58,10 @@
 
 .work__desc__wrapper{
   display: block;
-  width: 420px;
+  max-width: 420px;
   text-align: center;
   margin: 0 auto;
+  padding: 0 10px;
 }
 
 .work__desc__button{
@@ -101,10 +82,21 @@
 }
 
 .slider__big{
-  display: block;
-  height: 525px;
+  //height: 525px;
   background: $color-coffee-back;
+  flex: percentage(525/750);
+  width: 50%;
+  //flex: 70%;
 
+  @include responsive(tablet) {
+    order: 1;
+    width: 100%;
+    height: 532px;
+  }
+
+  @include responsive(mobile){
+    height: 257px;
+  }
 }
 
 .slider__display__big{
@@ -114,18 +106,28 @@
 }
 
 .slider__smalls{
+  width: 50%;
   display: flex;
-  height: 225px;
-  //background: blue;
+  flex: percentage(225/750);
+  //height: 225px;
+
+  @include responsive(tablet) {
+    width: 100%;
+    order:3;
+    height: 216px;
+  }
+
+  @include responsive(mobile){
+    height: 94px;
+  }
 }
 
 .slider__small{
   //display: block;
-  flex: 50%;
   position: relative;
-  //width: 50%;
-  //height:100%;
-  //display: inline-block;
+  width: 50%;
+  height:100%;
+  display: inline-block;
   //background-color: blue;
 
 }
@@ -217,31 +219,57 @@
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
-  height: 1280px;
   text-align: center;
+  padding-bottom: 148px;
+
+  @include responsive(tablet){
+    padding-bottom: 239px;
+  }
+
+  @include responsive(mobile){
+    padding-bottom: 254px;
+  }
+
 }
 
 .opinions__section-name{
   background: url("../img/lettering-about.png") 50% 30px no-repeat;
   background-size: auto;
-  width: 520px;
+  max-width: 600px;
   text-align: center;
   display: inline-block;
-  padding: 20px 100px;
+  padding: 20px;
   line-height:64px;
+
+  @include responsive(mobile){
+    margin-bottom: -40px;
+  }
 }
 
 .quotes{
   display: flex;
   justify-content: center;
   font-family:RobotoRegular;
-  margin-bottom:70px;
+  margin-bottom:60px;
+
+  @include responsive(tablet){
+    margin-bottom:50px;
+  }
+
+  @include responsive(mobile){
+    flex-wrap: wrap;
+    margin-bottom:20px;
+  }
 }
 
 .quote{
   width: 380px;
   text-align: left;
   margin: 20px;
+  
+  @include responsive(mobile){
+    margin: 20px 10px;
+  }
 }
 
 .quote__sign{
@@ -250,8 +278,14 @@
 
 .quote__text{
   margin: 25px auto;
-  text-align: justify;
+  text-align: left;
+  hyphens: none;
+  word-wrap: normal;
   line-height: 25px;
+
+  @include responsive(mobile){
+    margin-top:10px;
+  }
 }
 
 .quote__author{
@@ -278,28 +312,50 @@
 }
 
 
-.contact-us{
-  display: inline-block;
-  width: auto;
-  background: rgba(255,255,2555,0.5);
-  border-radius:5px;
-  overflow: hidden;
+.contact-us {
+  padding: 0 10px;
+
+  &__wrapper {
+    max-width: 380px;
+    width: 100%;
+    display: block;
+    width: auto;
+    background: rgba(255, 255, 2555, 0.5);
+    border-radius: 5px;
+    overflow: hidden;
+    text-align: center;
+    margin: 0 auto;
+  }
 }
 
-.contact-us__form__item input, .contact-us__form__item textarea{
-  width: 340px;
-  height: 45px;
-  line-height: 45px;
-  margin: 0 20px 20px;
-  border-radius: 5px;
-  
-  color: $color-font-black;
-  border: none;
-  font-family:RobotoRegular;
+.contact-us__form__item {
+  padding: 10px 20px;
 
-  &[placeholder]{
-    color: rgba($color-font-black, 0.5);
-    padding-left: 20px;
+  &:first-child{
+    padding-top: 0;
+  }
+
+  &:last-child{
+    padding-bottom: 20px;
+  }
+
+  &  input, & textarea {
+    width: 100%;
+    line-height: 43px;
+    border-radius: 5px;
+    color: $color-font-black;
+    border: none;
+    font-family: RobotoRegular;
+
+
+    &[placeholder] {
+      color: rgba($color-font-black, 0.5);
+      padding-left: 20px;
+    }
+  }
+
+  & textarea{
+    resize: vertical;
   }
 }
 
@@ -339,14 +395,12 @@
 }
 
 .angle-up{
-  display: inline;
+  display: block;
   color: white;
   opacity: .7;
   font-size: 50px;
-  position: absolute;
-  bottom: 150px;
-  left: 50%;
-  transform: translateX(-50%);
+  text-align: center;
+  margin: 30px;
   &:hover{
     opacity: 1;
     cursor: pointer;
