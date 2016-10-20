@@ -1,0 +1,24 @@
+.header{
+  background: url("../img/lettering-portfolio.png") no-repeat 50% 50%,
+  url("../img/back-top.jpg") no-repeat;
+  background-size: auto, cover;
+  min-height: 650px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.social-and-nav{
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+
+.avatar-wrapper{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}

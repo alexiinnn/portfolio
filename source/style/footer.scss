@@ -23,7 +23,8 @@
   align-items: center;
 
   @include responsive(tablet){
-    display: block;
+    //flex-wrap: wrap;
+    flex-direction: column;
     text-align: center;
   }
 

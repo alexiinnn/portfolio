@@ -2,13 +2,21 @@
 
 .main__blog{
   margin-top:35px;
-  padding-bottom: 140px;
   display: flex;
   justify-content: center;
   font-family:RobotoRegular;
   font-size: 16px;
   color: $color-font-darkgray;
   position: relative;
+  padding-bottom: $footHeight-l;
+
+  @include responsive(tablet){
+    padding-bottom: $footHeight-m;
+  }
+
+  @include responsive(mobile){
+    padding-bottom: $footHeight-s;
+  }
 
 }
 

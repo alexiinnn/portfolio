@@ -25,6 +25,8 @@ $button-width: 30px;
   }
 
   &.active {
+    position: fixed;
+    right: 0;
     .top {
       transform: translateY(11px) translateX(0) rotate(45deg);
       background: $color-active;

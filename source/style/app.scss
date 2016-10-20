@@ -27,18 +27,6 @@ ul, ol{
   outline: none;
 }
 
-.container__space-between{
-  display: flex;
-  text-align: center;
-  justify-content: space-between;
-}
-
-.container__center{
-  display: flex;
-  text-align: center;
-  justify-content: center;
-}
-
 //mixins
 .section-name__title {
   display: inline-block;
@@ -102,18 +90,7 @@ ul, ol{
 
 
 //HEADER
-.header{
-  background: url("../img/lettering-portfolio.png") no-repeat 50% 50%,
-  url("../img/back-top.jpg") no-repeat;
-  background-size: auto, cover;
-  min-height: 650px;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100vh;
-}
-
+@import "header";
 @import "socials";
 @import "nav";
 @import "avatar";
