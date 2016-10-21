@@ -6,13 +6,14 @@ $(function () {
     $.each($('*'), function () {
         var
             $this = $(this),
-            background = $this.css('background-image'),
+            backgrounds = $this.css('background-image').split(','),
             img = $this.is('img');
 
-        if (background != 'none') {
-            var path = background.replace('url("', '').replace('")', '');
-            // console.log(path);
-            imgs.push(path);
+        if (backgrounds != 'none') {
+            $.each(backgrounds, function (index, background) {
+                var path = background.replace('url("', '').replace('")', '');
+                imgs.push(path);
+            })
         }
 
         if (img) {
@@ -23,7 +24,6 @@ $(function () {
             }
         }
     });
-
     var percentsTotal = 1;
 
     for (var i = 0; i < imgs.length; i++) {
