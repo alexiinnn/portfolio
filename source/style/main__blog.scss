@@ -8,10 +8,13 @@
   font-size: 16px;
   color: $color-font-darkgray;
   position: relative;
+  padding-left: 30%;
   padding-bottom: $footHeight-l;
 
   @include responsive(tablet){
     padding-bottom: $footHeight-m;
+    padding-left: 0;
+
   }
 
   @include responsive(mobile){
@@ -21,22 +24,39 @@
 }
 
 .sidebar{
-  flex: 30%;
+
+  width: 30%;
   display: flex;
   justify-content: flex-end;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
   z-index: 5;
+  height: 100vh;
+  position: absolute;
+  top:0;
+  left: 0;
+  &-wrapper{
+    position: relative;
+    z-index: 5;
+
+    @include responsive(tablet) {
+      background: $color-green;
+      color: rgba($color-font-white, 0.7);
+      box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &-fixed{
+    position: fixed;
+    top: 0;
+  }
+
+  &-bottom{
+    position: absolute;
+  }
 
   @include responsive(tablet){
-    height: 100vh;
-    position: fixed;
+    //position: fixed;
     left: -288px;
     width: 285px;
-    background: $color-green;
-    color: rgba($color-font-white, 0.7);
-    box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
 
     &-open{
       left: 0;
@@ -59,28 +79,34 @@
 
 [class^= 'swipe'] {
   @include responsive(tablet) {
-
     border-radius: 50%;
     background-color: rgb(0, 191, 165);
     box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
-    position: fixed;
-    left: -51px;
+    border: 3px solid transparent;
+    border-radius: 50%;
+    position: absolute;
+    right: -9px;
     top: 50vh;
     transform: translateY(-50%);
     width: 60px;
     height: 60px;
-    z-index: 4;
+    z-index: 1;
+    cursor: pointer;
+
   }
 }
 
 .swipe-overlay{
-  cursor: pointer;
   z-index: 6;
   box-shadow: none;
+  border-radius: 0;
+  width: 51px;
+  height: 66px;
+  right: 0px;
 }
 
 .swipe-open{
-  left: 237px;
+  //left: 237px;
 }
 
 .sidebar__item{

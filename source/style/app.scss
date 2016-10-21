@@ -2,7 +2,6 @@
 @import "colors";
 @import "socials";
 @import "media-breakpoints";
-//@import "../../bower_components/singularity/stylesheets/singularitygs";
 
 
 body {
@@ -26,6 +25,8 @@ ul, ol{
 *:focus {
   outline: none;
 }
+
+@import "preloader";
 
 //mixins
 .section-name__title {

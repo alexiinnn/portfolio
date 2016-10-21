@@ -10,6 +10,7 @@ var eventListeners = (function () {
         $('.auth__toggle-btn').on('click',_logIn);
         $('.btn-home').on('click',_home);
         $('.swipe-overlay').on('click', _swipe);
+        $('.swipe').on('click', _swipe);
     };
 
     // NAVigation
@@ -44,8 +45,6 @@ var eventListeners = (function () {
     //blog_swipe_sidebar
     var _swipe = function (ev) {
         $('.sidebar').toggleClass('sidebar-open');
-        $('.swipe').toggleClass('swipe-open');
-        $('.swipe-overlay').toggleClass('swipe-open');
     }
 
     return {
@@ -55,3 +54,5 @@ var eventListeners = (function () {
 })();
 
 eventListeners.init();
+
+
