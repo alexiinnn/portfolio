@@ -8,6 +8,11 @@ Created 2 additional tasks:
 
 Stack:
  - Gulp 4.0
+ - bower 1.7.9
+ - HTML5
+ - CSS3
+ - JavaScript
+ 
  
 Getting started:
 
