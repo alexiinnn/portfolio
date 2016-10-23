@@ -1,13 +1,17 @@
-#Учебная сборка Loftschool (выпускной проект №1) 
+#Loftschool (graduation project №1) 
 
 Alexey Nelipovich
 
-Created 2 additional tasks:
-1. Task 'sprite' - sprite-image generation. Use 'gulp sprite'.
-2. Task 'copy_img_font' - copy from source to build directory. Use 'gulp copy_img_font'
+This portfolio was made during LoftSchool education courses. Thank to all mentors and lecturers, and also my collegues.
+Have a nice mood!
 
 Stack:
  - Gulp 4.0
+ - bower 1.7.9
+ - HTML5
+ - CSS3
+ - JavaScript
+ 
  
 Getting started:
 
@@ -16,4 +20,3 @@ Getting started:
 3. npm install gulpjs/gulp-cli -g  // Install the latest Gulp CLI tools globally
 4. npm install
 6. run "gulp" command to start
-
