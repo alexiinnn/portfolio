@@ -2,7 +2,7 @@
 
 Alexey Nelipovich
 
-This project was made during LoftSchool education courses. Thank to all mentors and lecturers, and also my collegues.
+This portfolio was made during LoftSchool education courses. Thank to all mentors and lecturers, and also my collegues.
 Have a nice mood!
 
 Stack:
