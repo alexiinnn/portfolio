@@ -21,19 +21,15 @@
 .preloader__animation {
   width: 150px;
   height: 150px;
-  border: 3px solid transparent;
   border-radius: 50%;
-  border-top-color: #fff;
+  border-top: 3px solid #fff;
   position: relative;
   animation: spin 2s linear infinite;
 
   &:before, &:after {
     content: "";
     position: absolute;
-    border: 3px solid transparent;
     border-radius: 50%;
-    border-top-color: #fff;
-
   }
 
   &:before {
@@ -41,6 +37,7 @@
     bottom: 7px;
     left: 7px;
     right: 7px;
+    border-right: 3px solid #fff;
     animation: spin 3s linear infinite;
 
   }
@@ -50,6 +47,7 @@
     bottom: 15px;
     left: 15px;
     right: 15px;
+    border-bottom: 3px solid #fff;
     animation: spin 1.5s linear infinite;
   }
 }
