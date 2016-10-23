@@ -3,8 +3,11 @@
 Alexey Nelipovich
 
 Created 2 additional tasks:
+
 1. Task 'sprite' - sprite-image generation. Use 'gulp sprite'.
+
 2. Task 'copy_img_font' - copy from source to build directory. Use 'gulp copy_img_font'
+
 
 Stack:
  - Gulp 4.0
