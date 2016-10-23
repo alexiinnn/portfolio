@@ -2,12 +2,8 @@
 
 Alexey Nelipovich
 
-Created 2 additional tasks:
-
-1. Task 'sprite' - sprite-image generation. Use 'gulp sprite'.
-
-2. Task 'copy_img_font' - copy from source to build directory. Use 'gulp copy_img_font'
-
+This project was made during LoftSchool education courses. Thank to all mentors and lecturers, and also my collegues.
+Have a nice mood!
 
 Stack:
  - Gulp 4.0
