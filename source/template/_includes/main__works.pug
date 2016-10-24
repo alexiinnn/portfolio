@@ -61,11 +61,11 @@ main.main__works
                 form.contact-us__form(action='script/message.php', method='POST')
                     ul.contact-us__form__list
                         li.contact-us__form__item
-                            input(type='text', name='name', placeholder='Name')
+                            input(type='text', name='name', placeholder='Name', required='')
                         li.contact-us__form__item
-                            input(type='email', name='email', placeholder='E-mail')
+                            input(type='email', name='email', placeholder='E-mail', required='')
                         li.contact-us__form__item
-                            textarea(rows='3', name='message', placeholder='Your message')
+                            textarea(rows='3', name='message', placeholder='Your message', required='')
                     .contact-us__btns
                         button.contact-us__btn.btn-send(type='submit' value="Submit") Send
                         button.contact-us__btn.btn-clear(type='reset' value="Reset") Clear
