@@ -58,16 +58,16 @@ main.main__works
         .contact-us
             .contact-us__wrapper
                 +dashed-title('Contact me', 'color-font-darkgrey', 'fz35')
-                form.contact-us__form(action='script/message.php', method='POST')
+                form.contact-us__form#contact-us(action='script/message.php', method='POST')
                     ul.contact-us__form__list
                         li.contact-us__form__item
-                            input(type='text', name='name', placeholder='Name', required='')
+                            input(type='text', name='name', placeholder='Name')
                         li.contact-us__form__item
-                            input(type='email', name='email', placeholder='E-mail', required='')
+                            input(type='email', name='email', placeholder='E-mail')
                         li.contact-us__form__item
-                            textarea(rows='3', name='message', placeholder='Your message', required='')
+                            textarea(rows='3', name='message', placeholder='Your message')
                     .contact-us__btns
-                        button.contact-us__btn.btn-send(type='submit' value="Submit") Send
+                        button.contact-us__btn.btn-send(type='submit' form='contact-us' value="Submit") Send
                         button.contact-us__btn.btn-clear(type='reset' value="Reset") Clear
         .angle-up
             i.fa.fa-angle-up
