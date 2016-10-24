@@ -1,0 +1,29 @@
+.parallax{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+
+  &__layer{
+    width: 110%;
+    margin-left: -55%;
+    left: 50%;
+    height: 100%;
+    position: absolute;
+    //bottom: 0;
+
+    & img{
+      display: block;
+      position: absolute;
+      bottom: -5%;
+      width: 100%;
+
+    }
+  }
+
+  @include responsive(tablet){  //should be 'tablet' BUG change at 900px breakpoint WTF??
+    display: none;
+  }
+}

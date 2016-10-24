@@ -1,23 +1,28 @@
-.welcome-fullscreen{
+@import "parallax-mouse";
+
+.welcome-container, .welcome-fullscreen {
   height:100vh;
+  position: relative;
 }
 
 .welcome{
   height:100vh;
   width: 100%;
-  background: url(../img/back.jpg) 50% 50% no-repeat;
-  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   color: rgba($color-font-darkgray, .8);
-  //position: relative;
   padding-bottom:270px;
   padding-top: 300px;
 
+  @include responsive(tablet){ //should be 'tablet' BUG change at 900px breakpoint WTF??
+    position: relative;
+    background: url(../img/back.jpg) 50% 50% no-repeat;
+    background-size: cover;
+  }
+
   @include responsive(mobile){
     padding-top: 250px;
-    //padding-bottom:290px;
   }
 
 }
@@ -128,12 +133,13 @@
 }
 
 .social__welcome{
-  margin-top: 30px;
+  margin-top: 28px;
   text-align: center;
 
   & li.social__item-footer{
     border: none;
-    font-size: 24 px;
+    font-size: 28px;
+    margin: 0 10px;
 
     &:hover{
       background: transparent;
@@ -257,11 +263,17 @@
   background: transparent;
   color: $color-font-white;
   cursor: pointer;
+  transition: .5s ease-in-out;
 
   @include responsive(mobile){
     right: 50%;
     transform: translateX(50%);
     top:10px;
+  }
+
+  &:hover{
+    background: $color-font-white;
+    color: $color-green;
   }
 }
 

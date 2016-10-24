@@ -215,9 +215,7 @@
 }
 
 .opinions{
-  background: url("../img/back-bottom.jpg");
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background: url("../img/back-bottom.jpg") no-repeat 50% 50%;
   background-size: cover;
   text-align: center;
   padding-bottom: $footHeight-l;
@@ -315,16 +313,34 @@
 .contact-us {
   padding: 0 10px;
 
+
   &__wrapper {
     max-width: 380px;
     width: 100%;
     display: block;
     width: auto;
-    background: rgba(255, 255, 2555, 0.5);
+    //background: rgba(255, 255, 2555, 0.5);
     border-radius: 5px;
     overflow: hidden;
     text-align: center;
     margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    &:before{
+      background: url("../img/back-bottom.jpg") 50% 50% no-repeat;
+      content: '';
+      background-size: 1710px 1307px;
+      margin-top: -327px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      filter: blur(10px);
+      z-index: -1;
+    }
   }
 }
 
@@ -377,6 +393,8 @@
   font-family:RobotoMedium;
   cursor: pointer;
   font-size: 16px;
+  transition: .5s ease-in-out;
+
   @include responsive(tablet){
     font-size: 14px;
   }

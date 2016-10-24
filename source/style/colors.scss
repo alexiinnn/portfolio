@@ -8,8 +8,9 @@ $color-font-black: #373e42;
 $color-font-white: #ffffff;
 $color-font-darkgray: #455a64;
 $color-green: #00bfa5;
+$color-green-active: #009688;
 $slider-overlay: #b6b4ae;
 $slider-overlay-oposite: #888372;
-$button-green: rgba(113, 189, 165, 0.85);
-$button-green-active: rgba(88, 148, 136, 0.85);
+$button-green: rgba($color-green, 0.85);
+$button-green-active: rgba($color-green-active, 0.85);
 

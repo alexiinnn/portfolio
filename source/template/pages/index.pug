@@ -23,58 +23,60 @@ html(lang='en')
         include ../_includes/preloader
         include ../_includes/_mixins.pug
 
-        main.welcome
-            .welcome__wrapper
-                .welcome__menu
-                    .welcome__menu-frontside
-                        .avatar
-                            .avatar__picture
-                                img(src="assets/img/ava.jpg")
-                            .avatar__name.avatar__name-welcome Alexey Nelipovich
-                            .avatar__description Web developer personal website
-                        .social.social__welcome
-                            ul.social__list
-                                li.social__item.social__item-footer.facebook
-                                    i.fa.fa-facebook-square
-                                li.social__item.social__item-footer.github
-                                    i.fa.fa-github-alt
-                                li.social__item.social__item-footer.linkedin
-                                    i.fa.fa-linkedin
-                        .welcome__nav
-                            ul.nav__list.nav__list-welcome.contact-us__btns
-                                li.nav__item.nav__item-welcome.contact-us__btn
-                                    a(href='./works.html') Work
-                                li.nav__item.nav__item-welcome.contact-us__btn
-                                    a(href='./about.html') About
-                                li.nav__item.nav__item-welcome.contact-us__btn
-                                    a(href='./blog.html') Blog
-                    .welcome__menu-backside.auth
-                        .auth__title
-                            +dashed-title('Log in', 'color-font-darkgray', 'fz35')
-                        form.auth__form(action='script/login.php', method='POST')
-                            .form__item.auth__form__item.auth__form__item-login
-                                input(type='text', name='login', placeholder='Login')
+        main.welcome-container
+            include ../_includes/parallax-mouse
+            .welcome
+                .welcome__wrapper
+                    .welcome__menu
+                        .welcome__menu-frontside
+                            .avatar
+                                .avatar__picture
+                                    img(src="assets/img/ava.jpg")
+                                .avatar__name.avatar__name-welcome Alexey Nelipovich
+                                .avatar__description Web developer personal website
+                            .social.social__welcome
+                                ul.social__list
+                                    li.social__item.social__item-footer.facebook
+                                        i.fa.fa-facebook-square
+                                    li.social__item.social__item-footer.github
+                                        i.fa.fa-github-alt
+                                    li.social__item.social__item-footer.linkedin
+                                        i.fa.fa-linkedin
+                            .welcome__nav
+                                ul.nav__list.nav__list-welcome.contact-us__btns
+                                    li.nav__item.nav__item-welcome.contact-us__btn
+                                        a(href='./works.html') Work
+                                    li.nav__item.nav__item-welcome.contact-us__btn
+                                        a(href='./about.html') About
+                                    li.nav__item.nav__item-welcome.contact-us__btn
+                                        a(href='./blog.html') Blog
+                        .welcome__menu-backside.auth
+                            .auth__title
+                                +dashed-title('Log in', 'color-font-darkgray', 'fz35')
+                            form.auth__form(action='script/login.php', method='POST')
+                                .form__item.auth__form__item.auth__form__item-login
+                                    input(type='text', name='login', placeholder='Login')
 
-                            .form__item.auth__form__item.auth__form__item-password
-                                input(type='password', name='password', placeholder='Password')
+                                .form__item.auth__form__item.auth__form__item-password
+                                    input(type='password', name='password', placeholder='Password')
 
 
-                            .auth__human
-                                input#human-checkbox.auth__human__checkbox(type='checkbox', name='human', value='human')
-                                label(for='human-checkbox') I'm human
-                            .auth__bot-check
-                                .auth__bot-check__desc Are you sure you're not bot?
-                                .auth__bot-check__case
-                                    .auth__bot-check__item
-                                        input#bot-check__yes(name='bot-check', type='radio', value='true')
-                                        label(for='bot-check__yes') Yes
-                                    .auth__bot-check__item
-                                        input#bot-check__no(name='bot-check', type='radio', value='true')
-                                        label(for='bot-check__no') No
-                        .auth__btns
-                                button.contact-us__btn.btn-home Home
-                                button.contact-us__btn.btn-clear(type='submit' value="Submit") Log in
-            button.auth__toggle-btn Log in
+                                .auth__human
+                                    input#human-checkbox.auth__human__checkbox(type='checkbox', name='human', value='human')
+                                    label(for='human-checkbox') I'm human
+                                .auth__bot-check
+                                    .auth__bot-check__desc Are you sure you're not bot?
+                                    .auth__bot-check__case
+                                        .auth__bot-check__item
+                                            input#bot-check__yes(name='bot-check', type='radio', value='true')
+                                            label(for='bot-check__yes') Yes
+                                        .auth__bot-check__item
+                                            input#bot-check__no(name='bot-check', type='radio', value='true')
+                                            label(for='bot-check__no') No
+                            .auth__btns
+                                    button.contact-us__btn.btn-home Home
+                                    button.contact-us__btn.btn-clear(type='submit' value="Submit") Log in
+                button.auth__toggle-btn Log in
 
         footer.footer.footer-welcome
             .conteiner
