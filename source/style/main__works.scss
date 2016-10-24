@@ -340,6 +340,14 @@
       left: 0;
       filter: blur(10px);
       z-index: -1;
+
+      @include responsive(tablet){
+        margin-top: -196px;
+      }
+      @include responsive(mobile){
+        margin-top: -327px;
+        background-size: 1900px 1463px;
+      }
     }
   }
 }

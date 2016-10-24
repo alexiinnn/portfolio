@@ -56,6 +56,7 @@
     //position: fixed;
     left: -288px;
     width: 285px;
+    transition: left .5s ease-in-out;
 
     &-open{
       left: 0;
@@ -108,16 +109,39 @@
   //left: 237px;
 }
 
+a{
+  text-decoration: none;
+}
+
 .sidebar__item{
   padding: 20px;
 
-  &.active{
-    font-family:RobotoBold;
-    color: $color-green;
+  & a{
+    color: $color-font-darkgray;
+
+    &:hover{
+      color: $color-green;
+
+      @include responsive(tablet){
+        color: $color-coffee-back;
+      }
+    }
+  }
+
+  &-active{
     border-right: 3px solid $color-green;
 
+    & a{
+      font-family:RobotoBold;
+      color: $color-green;
+      border: none;
+
+      @include responsive(tablet){
+        color:$color-font-white;
+      }
+    }
+
     @include responsive(tablet){
-      color:$color-font-white;
       border-right: none;
     }
   }
