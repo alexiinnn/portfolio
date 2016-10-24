@@ -5,11 +5,9 @@
 
     function addListener() {
         $('form').on('submit', submitForm)
-        console.log('listen');
     }
 
     function submitForm(ev) {
-        console.log('preventDefault');
 
         var $form = $(this),
             url='',

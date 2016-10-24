@@ -4,7 +4,7 @@ var validation = (function () {
     },
 
         validateForm = function (form) {
-            var elements = form.find('input', 'textarea').not('input[type="hidden"]'),
+            var elements = form.find('input, textarea').not('input[type="hidden"]'),
                 valid = true;
 
             $.each(elements, function (index, element) {
@@ -14,9 +14,9 @@ var validation = (function () {
                 if(!value.length){
                     _addError($element);
                     valid = false;
+                    console.log($element);
                 }
             });
-            console.log('validate');
 
             return valid;
         },
@@ -28,7 +28,6 @@ var validation = (function () {
 
         _addError = function (element) {
             element.addClass('has-error');
-            console.log('addError');
         },
 
         _removeError = function () {
