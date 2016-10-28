@@ -1,20 +1,19 @@
 @import "media-breakpoints";
 
-
 .social {
   margin: 10px 15px;
   text-align: left;
 
-  @include responsive(mobile){
+  @include responsive(mobile) {
     margin: 10px 5px;
   }
 }
 
-.social__footer{
+.social__footer {
   display: inline-block;
 }
 
-.social__list{
+.social__list {
   font-size: 0;
 }
 
@@ -30,11 +29,11 @@
   text-align: center;
 
   &:hover {
-    opacity: 1;
+    opacity: 0.99; //BUG!!!
   }
 
-  &-top{
-    @include responsive(mobile){
+  &-top {
+    @include responsive(mobile) {
       font-size: 25px;
       width: 50px;
       height: 50px;
