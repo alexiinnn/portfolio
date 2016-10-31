@@ -53,6 +53,7 @@ var eventListeners = (function () {
     var $slider_list_reverse = $('.slider__list__small-reverse');
     var $slider_list_straight = $('.slider__list__small-straight');
     var $slider_list_big = $('.slider__list__big');
+    var $work__desc__list = $('.work__desc__list');
 
     var _sliderPrev = function (ev) {
         // $('.slider__list__small-straight').css('transform','translateY(-100%)');
@@ -60,6 +61,7 @@ var eventListeners = (function () {
         $slider_list_reverse.children().first().insertAfter($slider_list_reverse.children().last());
         $slider_list_straight.children().last().insertBefore($slider_list_straight.children().first());
         $slider_list_big.children().last().insertBefore($slider_list_big.children().first());
+        $work__desc__list.children().last().insertBefore($work__desc__list.children().first());
 
 
     }
@@ -71,6 +73,7 @@ var eventListeners = (function () {
         $slider_list_straight.children().first().insertAfter($slider_list_straight.children().last());
         $slider_list_reverse.children().last().insertBefore($slider_list_reverse.children().first());
         $slider_list_big.children().first().insertAfter($slider_list_big.children().last());
+        $work__desc__list.children().first().insertAfter($work__desc__list.children().last());
 
     }
 

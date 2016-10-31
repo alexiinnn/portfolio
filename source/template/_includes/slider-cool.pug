@@ -1,11 +1,24 @@
 section.work
     .work__desc
-        .work__desc__wrapper
-            +dashed-title('Online education school Website', 'color-font-darkgray', 'fz35')
-            .work__desc__skills HTML, CSS, Javascript
-            a(href= "").work__desc__button
-                i.fa.fa-link
-                span.work__desc__button__text Review site
+        ul.work__desc__list
+            li.work__desc__item
+                +dashed-title('Wedding decoration agency', 'color-font-darkgray', 'fz35')
+                .work__desc__skills HTML, CSS, Javascript, Bootstrap
+                a(href= "http://lovemyrr.by" target="_blank").work__desc__button
+                    i.fa.fa-link
+                    span.work__desc__button__text Review site
+            li.work__desc__item
+                +dashed-title('My personal website', 'color-font-darkgray', 'fz35')
+                .work__desc__skills HTML, CSS, Javascript
+                a(href= "index.html").work__desc__button
+                    i.fa.fa-link
+                    span.work__desc__button__text Review site
+            li.work__desc__item
+                +dashed-title('Operational print service(In progress)', 'color-font-darkgray', 'fz35')
+                .work__desc__skills HTML, CSS, Javascript, AngularJS
+                a(href= "http://fotakrama.by" target="_blank").work__desc__button
+                    i.fa.fa-link
+                    span.work__desc__button__text Review site
     .slider__big
         .slider__display__big
             ul.slider__list__big
@@ -13,8 +26,6 @@ section.work
                     img(src='./assets/img/work-2.png')
                 li.slider__item__big
                     img(src='./assets/img/work-3.png')
-                li.slider__item__big
-                    img(src='./assets/img/work-4.png')
                 li.slider__item__big
                     img(src='./assets/img/work-1.png')
     .slider__smalls
@@ -27,8 +38,6 @@ section.work
                         img(src='./assets/img/work-2.png')
                     li.slider__item__small
                         img(src='./assets/img/work-1.png')
-                    li.slider__item__small
-                        img(src='./assets/img/work-4.png')
             .slider__arrow-down
                 i.fa.fa-angle-down
         .slider__small.slider__small-straight
@@ -36,8 +45,6 @@ section.work
                 ul.slider__list__small.slider__list__small-straight
                     li.slider__item__small
                         img(src='./assets/img/work-3.png')
-                    li.slider__item__small
-                        img(src='./assets/img/work-4.png')
                     li.slider__item__small
                         img(src='./assets/img/work-1.png')
                     li.slider__item__small
