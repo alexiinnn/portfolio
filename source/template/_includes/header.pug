@@ -1,6 +1,4 @@
 header.header
-    .header__bg
-        img(src='./assets/img/back-top.jpg', alt='mountains header background')
     .social-and-nav
         .social
             ul.social__list
@@ -11,6 +9,8 @@ header.header
                 li.social__item.social__item-top.linkedin
                     i.fa.fa-linkedin
         include nav.pug
+    .header__bg
+        img(src='./assets/img/back-top.jpg', alt='mountains header background')
     .header__bg-text
         img(src='./assets/img/lettering-portfolio.png', alt='portfolio', class="header__bg-text-img")
     .avatar-wrapper

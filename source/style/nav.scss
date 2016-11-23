@@ -77,7 +77,7 @@ $button-width: 30px;
   visibility: hidden;
   transition: opacity .35s, visibility .35s, height .35s;
   overflow: hidden;
-  z-index:10;
+  z-index:90;
 
   &.open {
     opacity: .9;
