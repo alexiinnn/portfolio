@@ -13,7 +13,7 @@
         $('.gm-style').children('div:nth-child(2)').css({
             'margin-bottom': + oldFooterHeight
         });
-
+cd
     }
 
     $(window).on('load', function () {

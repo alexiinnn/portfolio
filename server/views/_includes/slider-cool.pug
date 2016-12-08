@@ -1,0 +1,56 @@
+section.work
+    .work__desc
+        ul.work__desc__list
+            li.work__desc__item
+                .work__desc__name
+                    +dashed-title('Wedding decoration agency', 'color-font-darkgray', 'fz35')
+                .work__desc__tech HTML, CSS, Javascript, Bootstrap
+                a(href= "http://lovemyrr.by" target="_blank").work__desc__button
+                    i.fa.fa-link
+                    span.work__desc__button__text Review site
+            li.work__desc__item
+                .work__desc__name
+                    +dashed-title('My personal website', 'color-font-darkgray', 'fz35')
+                .work__desc__tech HTML, CSS, Javascript
+                a(href= "index.html").work__desc__button
+                    i.fa.fa-link
+                    span.work__desc__button__text Review site
+            li.work__desc__item
+                .work__desc__name
+                    +dashed-title('Operational print service(In progress)', 'color-font-darkgray', 'fz35')
+                .work__desc__tech HTML, CSS, Javascript, AngularJS
+                a(href= "http://fotakrama.by" target="_blank").work__desc__button
+                    i.fa.fa-link
+                    span.work__desc__button__text Review site
+    .slider__big
+        .slider__display__big
+            ul.slider__list__big
+                li.slider__item__big.active
+                    img(src='./assets/img/work-2.png')
+                li.slider__item__big
+                    img(src='./assets/img/work-3.png')
+                li.slider__item__big
+                    img(src='./assets/img/work-1.png')
+    .slider__smalls
+        .slider__small
+            .slider__display__small.slider__display__small-reverse
+                ul.slider__list__small.slider__list__small-reverse
+                    li.slider__item__small
+                        img(src='./assets/img/work-3.png')
+                    li.slider__item__small
+                        img(src='./assets/img/work-2.png')
+                    li.slider__item__small
+                        img(src='./assets/img/work-1.png')
+            .slider__arrow-down
+                i.fa.fa-angle-down
+        .slider__small.slider__small-straight
+            .slider__display__small.slider__display__small-straight
+                ul.slider__list__small.slider__list__small-straight
+                    li.slider__item__small
+                        img(src='./assets/img/work-3.png')
+                    li.slider__item__small
+                        img(src='./assets/img/work-1.png')
+                    li.slider__item__small
+                        img(src='./assets/img/work-2.png')
+            .slider__arrow-up
+                i.fa.fa-angle-up

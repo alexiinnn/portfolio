@@ -1,0 +1,54 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+
+        link(rel='shortcut icon' href='./assets/img/favicon.ico' type='image/x-icon')
+
+        link(rel='stylesheet' href='./assets/css/foundation.css')
+        link(rel='stylesheet' href='./assets/css/app.css')
+
+        script(src='./assets/js/foundation.js' defer)
+        script(src='./assets/js/main.js' defer)
+
+        <!--[if lt IE 9]>
+        script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+        <![endif]-->
+
+        title Admin panel
+    body.admin
+        include ../_includes/_mixins.pug
+        .panel
+            h1.panel__title Administration panel
+            a(href='/index.html').panel__link Back to main site
+        .tabs.admin__tabs
+
+            input#tab-about(type='radio', name='tabs', checked='').tab__input
+            label(for='tab-about').tab__label
+                i.fa.fa-line-chart
+                span About
+
+            input#tab-blog(type='radio', name='tabs').tab__input
+            label(for='tab-blog').tab__label
+                i.fa.fa-pencil-square-o
+                span Blog
+
+            input#tab-work(type='radio', name='tabs').tab__input
+            label(for='tab-work').tab__label
+                i.fa.fa-diamond
+                span Works
+            form#tab-about__content.tab__content
+                h3.tab__content__title Page "About"
+                +skill__div-admin('Frontend', 'HTML5', 'CSS3', 'Javascript')
+                +skill__div-admin('Backend', 'PHP', 'mySQL', 'Node.js', 'Mongo.db')
+                +skill__div-admin('Workflow', 'Git', 'Gulp', 'Bower')
+                .btn-wrap
+                    button.contact-us__btn.btn-save(type='submit' form='tab-about__content' value="Submit") Save
+            #tab-blog__content.tab__content
+                h3 Page "Blog"
+                p
+            #tab-work__content.tab__content
+                h3 Page "Works"
+                p
