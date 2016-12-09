@@ -38,3 +38,4 @@ build
 node_modules
 npm-debug.log
 server/node_modules
+server/data

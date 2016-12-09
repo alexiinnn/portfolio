@@ -7,11 +7,15 @@ module.exports = function() {
           // the script to run the app
           script: './server/bin/www',
           ignore: [
-              'views/',
-              'public/',
-              'node_modules/'
-          ]
-          // ext: 'js'
+              // '**/*.*',
+              // '!/server/**/*.*',
+              '/server/node_modules/**/*.*',
+              '/server/data/**/*.*',
+              '/server/public/**/*.*'
+          ],
+          verbose: true,
+          watch: './server',
+          ext: 'js,pug'
       }).on('start', function () {
           // to avoid nodemon being started multiple times
           // thanks @matthisk
