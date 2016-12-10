@@ -12,6 +12,7 @@ global.$ = {
     gulp: require('gulp'),
     rimraf: require('rimraf'),
     browserSync: require('browser-sync').create(),
+    nodemon: require('gulp-nodemon'),
     gp: require('gulp-load-plugins')()
 };
 
@@ -32,6 +33,7 @@ $.gulp.task('default', $.gulp.series(
         'css:foundation',
         'sprite:svg'
     ),
+    'nodemon',
     $.gulp.parallel(
         'watch',
         'serve'

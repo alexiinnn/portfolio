@@ -15,3 +15,21 @@ mixin quote(text, authorAva, authorName, authorTitle)
 mixin parallax-layer(prlxN)
     .parallax__layer
         img(src='./assets/img/welcome-parallax-'+`${prlxN}`+'.png' alt='parallax-layer-'+`${prlxN}`)
+
+
+mixin skill__div-admin(div__name, ...skill__levels)
+    skill__div.skill__div-admin
+        .skill__div__title.skill__div__title-admin #{div__name}
+        .skill__div__list-admin
+            each skill__level in skill__levels
+                .skill__div__item.skill__div__item-admin
+                    label.skill__label-admin(for='#{skill__level}') #{skill__level}
+                    input.skill__input-admin(id='#{skill__level}',  type='number', min="0", max="100",  name='#{skill__level}', value='0')
+                    .skill__percantage-admin %
+
+mixin skill__circle(skill__name, skill__level)
+    li.skill__div__item
+        svg.skill-circle(data-level=`${skill__level}` version="1.1" xmlns="http://www.w3.org/2000/svg")
+            <circle class ="circle" ></circle>
+            <circle class="circle circle-bar"></circle>
+        span #{skill__name}

@@ -74,6 +74,49 @@
 
 }
 
+//
+//
+@function pi() {
+  @return 3.14159265359;
+}
+$radius: 50;
+$strokeWidth: 20;
+
+
+.skill-circle {
+  viewPort:0 0 2*$radius+$strokeWidth 2*$radius+$strokeWidth;
+  display: inline-block;
+  vertical-align: middle;
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
+
+  stroke: #dfdcd5;
+  stroke-width: $strokeWidth;
+}
+
+.circle{
+  r: $radius;
+  cx: ($radius+$strokeWidth/2);
+  cy: $radius+$strokeWidth/2;
+  fill: transparent;
+  stroke-dasharray: (pi() * (2 * $radius));
+  stroke-dashoffset: 0;
+}
+
+.skill-circle:hover {
+  fill-opacity: 1;
+}
+
+.circle-bar{
+  stroke: #86d0c2;
+  stroke-width: 20px;
+  stroke-dashoffset: (pi() * (2 * $radius));
+  transition: stroke-dashoffset 1s ease-in-out;
+}
+//
+//
+
 .skills{
   flex: 50%;
   background: $color-about-right-back;

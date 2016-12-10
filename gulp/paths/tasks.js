@@ -13,6 +13,7 @@ module.exports = [
   './gulp/tasks/js.lint.js',
   './gulp/tasks/copy.image.js',
   './gulp/tasks/copy.font.js',
-  './gulp/tasks/sprite.svg.js'
+  './gulp/tasks/sprite.svg.js',
+  './gulp/tasks/nodemon.js'
 ];
 

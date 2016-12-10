@@ -1,0 +1,45 @@
+.error {
+  background: $color-green;
+  color: $color-font-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.error__wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.error__msg {
+  flex: 100%;
+  text-align: center;
+  display: block;
+  color: $color-about-right-back;
+  font-weight: bold;
+}
+
+.error__status {
+  flex: 100%;
+  display: block;
+  text-align: center;
+  font-size: 90px;
+  & h1{
+    margin: 20px !important;
+  }
+}
+
+.sad-smile {
+  font-size: 100px;
+}
+
+.error__way{
+  text-align: center;
+  & span a{
+    display: inline-block;
+    color: $color-about-right-back;
+  }
+}

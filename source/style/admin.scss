@@ -1,0 +1,192 @@
+.admin{
+  font-family:RobotoMedium;
+  z-index: -1;
+  min-height: 100vh;
+  display: flex;
+  //flex-direction:column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.panel{
+  background: $color-green;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+
+  &__title{
+    color: $color-font-white;
+    font-size: 28px;
+  }
+
+  &__link{
+    color: $color-font-white;
+    font-size: 16px;
+    opacity: .85;
+    text-decoration: underline;
+    transition: all .3s ease-in-out;
+
+    &:hover{
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+}
+
+
+.admin__tabs {
+  flex-grow: 1;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+  background-size: cover;
+  background: url("../img/back-top.jpg") no-repeat 50% 50%;
+  position: relative;
+  z-index: -1;
+  max-height: 100%;
+
+  &:before{
+    content: '';
+    z-index: -1;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $color-font-white;
+    opacity: .85;
+  }
+}
+
+.tab__input {
+  display:none;
+}
+.tab__label {
+  background: $color-about-left-back;
+  color: $color-font-darkgray;
+  line-height: 60px;
+  vertical-align: middle;
+  height: 60px;
+  display: block;
+  flex:1;
+  font-size: 16px;
+  font-weight: normal;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: all 0.5s; /* Safari 3.1 to 6.0 */
+  transition: all 0.5s;
+}
+.tabs label span {
+  padding: 5px;
+}
+.tabs label i {
+  padding: 5px;
+  margin-right: 0;
+}
+.tabs label:hover {
+  color: $color-green;
+}
+.tab__content {
+  display: none;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  max-height: 100%;
+
+  &__title{
+    flex: 100%;
+  }
+}
+
+.btn-wrap{
+  flex: 100%;
+}
+
+.btn-save{
+  width: 200px;
+}
+
+//about tab content
+#tab-about__content{
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.skill__div-admin{
+  display: table;
+  margin: 5px 20px 15px 0px;
+}
+
+.skill__div__title-admin{
+  display: table-caption;
+}
+
+.skill__div__list-admin{
+}
+
+.skill__div__item-admin{
+  display: table-row;
+
+}
+
+.skill__label-admin, .skill__input-admin, .skill__percantage-admin{
+  display: table-cell;
+  margin: 5px 10px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.skill__label-admin{
+  padding-left: 10px;
+  width: 100px;
+}
+
+.skill__input-admin{
+  //outline: none;
+  width: 50px;
+  text-align: right;
+  border: none;
+}
+
+
+
+//animation
+.tab__content * {
+  -webkit-animation: scale 0.7s ease-in-out;
+  -moz-animation: scale 0.7s ease-in-out;
+  animation: scale 0.7s ease-in-out;
+}
+@keyframes scale {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.01);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+//actions
+.tabs [id^="tab"]:checked + label {
+  background: $color-font-white;
+  color: $color-green;
+}
+
+#tab-about:checked ~ #tab-about__content,
+#tab-work:checked ~ #tab-work__content,
+#tab-blog:checked ~ #tab-blog__content {
+  display: flex;
+}

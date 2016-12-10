@@ -1,0 +1,42 @@
+block variables
+- console.log(title)
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+
+        link(rel='shortcut icon' href='./assets/img/favicon.ico' type='image/x-icon')
+
+        link(rel='stylesheet' href='./assets/css/foundation.css')
+        link(rel='stylesheet' href='./assets/css/app.css')
+
+        script(src='./assets/js/foundation.js' defer)
+        script(src='./assets/js/main.js' defer)
+
+        <!--[if lt IE 9]>
+        script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+        <![endif]-->
+
+        block title
+            title #{title}
+    body.error
+        .error__wrap
+            .sad-smile
+                i.fa.fa-frown-o
+            .error__status
+                h1= error.status
+            .error__msg
+                h2= message
+            .error__way
+                p The page you are looking for doesn't exist or an other error occurred.
+                p
+                    | Go #{' '}
+                    span
+                        a(href='javascript:history.back(1)') back
+                    | , or head over to #{' '}
+                    span
+                        a(href='./index.html') alexnelipovich.pro
+                    |  to choose new direction.
+        //pre #{error.stack}

@@ -18,7 +18,7 @@ main.main__about
                         A bit later I'm going update my content here.
                         But for now take a look at how here is cool and beautifully.
 
-        .skills
+        .skills.preprepre
             .skills__title
                 +dashed-title('What can I do you for', 'color-font-darkgray', 'fz35')
             .skills__desc.
@@ -28,21 +28,13 @@ main.main__about
             .skill__div
                 .skill__div__title Frontend
                 ul.skill__div__list
-                    li.skill__div__item
-                        img(src= './assets/img/skill_round.png')
-                        span HTML5
-                    li.skill__div__item
-                        img(src= './assets/img/skill_round.png')
-                        span CSS3
-                    li.skill__div__item
-                        img(src= './assets/img/skill_round.png')
-                        span Javascript & jQuery
+                    +skill__circle("HTML5", 75)
+                    +skill__circle("CSS3", 65)
+                    +skill__circle("Javascript & jQuery", 35)
             .skill__div
                 .skill__div__title Backend
                 ul.skill__div__list
-                    li.skill__div__item
-                        img(src= './assets/img/skill_round.png')
-                        span PHP
+                    +skill__circle("PHP", 45)
                     li.skill__div__item
                         img(src= './assets/img/skill_round.png')
                         span mySQL
