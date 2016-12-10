@@ -28,22 +28,13 @@ main.main__about
             .skill__div
                 .skill__div__title Frontend
                 ul.skill__div__list
-                    li.skill__div__item
-                        svg.icon.svg-github_round-dims
-                            use(xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="./assets/img/circle.svg#skill-circle")
-                        span HTML5
-                    li.skill__div__item
-                        img(src= './assets/img/skill_round.png')
-                        span CSS3
-                    li.skill__div__item
-                        img(src= './assets/img/skill_round.png')
-                        span Javascript & jQuery
+                    +skill__circle("HTML5", 75)
+                    +skill__circle("CSS3", 65)
+                    +skill__circle("Javascript & jQuery", 35)
             .skill__div
                 .skill__div__title Backend
                 ul.skill__div__list
-                    li.skill__div__item
-                        img(src= './assets/img/skill_round.png')
-                        span PHP
+                    +skill__circle("PHP", 45)
                     li.skill__div__item
                         img(src= './assets/img/skill_round.png')
                         span mySQL

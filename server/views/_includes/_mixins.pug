@@ -26,3 +26,10 @@ mixin skill__div-admin(div__name, ...skill__levels)
                     label.skill__label-admin(for='#{skill__level}') #{skill__level}
                     input.skill__input-admin(id='#{skill__level}',  type='number', min="0", max="100",  name='#{skill__level}', value='0')
                     .skill__percantage-admin %
+
+mixin skill__circle(skill__name, skill__level)
+    li.skill__div__item
+        svg.skill-circle(data-level=`${skill__level}` version="1.1" xmlns="http://www.w3.org/2000/svg")
+            <circle class ="circle" ></circle>
+            <circle class="circle circle-bar"></circle>
+        span #{skill__name}
