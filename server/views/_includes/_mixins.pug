@@ -1,0 +1,17 @@
+mixin dashed-title(name, nameColorClass, nameSizeClass)
+    .section-name__title(class= `${nameColorClass}`+' '+`${nameSizeClass}`) #{name}
+
+mixin quote(text, authorAva, authorName, authorTitle)
+    .quote__sign.fz35.color-font-black
+        i.fa.fa-quote-left
+    .quote__text.color-font-darkgrey #{text}
+    .quote__author
+        .quote__author__ava
+            img(src= `${authorAva}`)
+        .quote__author__desc
+            .quote__author__name #{authorName}
+            .quote__author__title #{authorTitle}
+
+mixin parallax-layer(prlxN)
+    .parallax__layer
+        img(src='./assets/img/welcome-parallax-'+`${prlxN}`+'.png' alt='parallax-layer-'+`${prlxN}`)

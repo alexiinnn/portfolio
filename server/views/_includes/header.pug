@@ -1,0 +1,25 @@
+header.header
+    .social-and-nav
+        .social
+            ul.social__list
+                li.social__item.social__item-top.facebook
+                    a(href="https://www.facebook.com/alexey.nelipovich" target="_blank")
+                        i.fa.fa-facebook-square
+                li.social__item.social__item-top.github
+                    a(href="https://github.com/alexiinnn" target="_blank")
+                        i.fa.fa-github
+                li.social__item.social__item-top.linkedin
+                    a(href="https://www.linkedin.com/in/alexey-nelipovich-ab1880a6" target="_blank")
+                        i.fa.fa-linkedin
+        include nav.pug
+    .header__bg
+        img(src='./assets/img/back-top.jpg', alt='mountains header background')
+    .header__bg-text
+        img(src='./assets/img/lettering-portfolio.png', alt='portfolio', class="header__bg-text-img")
+    .avatar-wrapper
+        .avatar
+            .avatar__picture
+                img(src="assets/img/ava.jpg")
+            .avatar__name Alexey Nelipovich
+            .avatar__description Web developer personal website
+    include triangles.pug

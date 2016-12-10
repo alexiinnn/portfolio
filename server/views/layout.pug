@@ -1,0 +1,57 @@
+block variables
+- console.log(title)
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+        meta(name='viewport', content='width=device-width, initial-scale=1')
+
+        link(rel='shortcut icon' href='./assets/img/favicon.ico' type='image/x-icon')
+
+        link(rel='stylesheet' href='./assets/css/foundation.css')
+        link(rel='stylesheet' href='./assets/css/app.css')
+
+        script(src='./assets/js/foundation.js' defer)
+        script(src='./assets/js/main.js' defer)
+
+        <!--[if lt IE 9]>
+        script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+        <![endif]-->
+
+        block title
+            title #{title}
+    body
+        include ./_includes/preloader
+        include ./_includes/_mixins.pug
+        include ./_includes/header.pug
+        block content
+
+
+        footer.footer
+            .conteiner
+                .nav-and-social.nav-and-social_footer
+                    nav.footer__nav
+                        ul.footer__nav__list
+                            li.footer__nav__item
+                                a(href='./works.html') My works
+                            li.footer__nav__item
+                                a(href='./about.html') About
+                            li.footer__nav__item
+                                a(href='./blog.html') Blog
+                            li.footer__nav__item
+                                a(href='./index.html') Log in
+                    .social.social__footer
+                        ul.social__list
+                            li.social__item.social__item-footer.facebook
+                                a(href="https://www.facebook.com/alexey.nelipovich" target="_blank")
+                                    i.fa.fa-facebook
+                            li.social__item.social__item-footer.github
+                                a(href="https://github.com/alexiinnn" target="_blank")
+                                    i.fa.fa-github-alt
+                            li.social__item.social__item-footer.linkedin
+                                a(href="https://www.linkedin.com/in/alexey-nelipovich-ab1880a6" target="_blank")
+                                    i.fa.fa-linkedin
+                .footer__desc
+                    .footer__desc__from I'm web developer from Minsk and this site was developed during studing at online courses School Loftschool.
+                    .footer__desc__copyright © Alexey Nelipovich | Designed with Loftschool | 2016
