@@ -65,6 +65,10 @@ $button-width: 30px;
   }
 }
 
+.hide-scroll{
+  overflow-y: hidden;
+}
+
 .overlay {
   position: fixed;
   background: $color-main;
@@ -81,7 +85,7 @@ $button-width: 30px;
   &.open {
     opacity: .9;
     visibility: visible;
-    height: 100%;
+    min-height: 100vh;
 
     li {
       animation: fadeInRight .5s ease forwards;

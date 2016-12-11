@@ -13,6 +13,7 @@ var eventListeners = (function () {
         $('.swipe').on('click', _swipe);
         $('.slider__arrow-down').on('click', _sliderPrev);
         $('.slider__arrow-up').on('click', _sliderNext);
+        $('.button_container').on('click', _hideScroll);
     };
 
     // NAVigation
@@ -77,7 +78,10 @@ var eventListeners = (function () {
 
     }
 
-
+    //toggle scroll bar on nav expand
+    var _hideScroll = function (ev) {
+        $('body').toggleClass('hide-scroll');
+    }
 
     return {
             init: init

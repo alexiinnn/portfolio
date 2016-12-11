@@ -13,13 +13,13 @@
             isRendered: false
         })
         isRendered++;
-        console.log('1 '+ isRendered);
+        // console.log('1 '+ isRendered);
     })
 
     var skillCircleSet = function (ev) {
         var scrollBottom = $(window).scrollTop() + $(window).height();
-        console.log(scrollBottom);
-        console.log('4 '+isRendered);
+        // console.log(scrollBottom);
+        // console.log('4 '+isRendered);
         $.each(skillCirclesObj, function (ind, val) {
             if (!val['isRendered'] && scrollBottom > val['circleBottom']) {
                 var $circle = $(val['circle']);
