@@ -28,34 +28,22 @@ main.main__about
             .skill__div
                 .skill__div__title Frontend
                 ul.skill__div__list
-                    +skill__circle("HTML5", 75)
-                    +skill__circle("CSS3", 65)
-                    +skill__circle("Javascript & jQuery", 35)
+                    each item in items
+                        if item.division == "Frontend"
+                            +skill__circle(item.skill, item.value)
             .skill__div
-                .skill__div__title Backend
-                ul.skill__div__list
-                    +skill__circle("PHP", 45)
-                    li.skill__div__item
-                        img(src= './assets/img/skill_round.png')
-                        span mySQL
-                    li.skill__div__item
-                        img(src= './assets/img/skill_round.png')
-                        span Node.js & npm
-                    li.skill__div__item
-                        img(src= './assets/img/skill_round.png')
-                        span Mongo.db
+                    .skill__div__title Backend
+                    ul.skill__div__list
+                        each item in items
+                            if item.division == "Backend"
+                                +skill__circle(item.skill, item.value)
             .skill__div
-                .skill__div__title Workflow
-                ul.skill__div__list
-                    li.skill__div__item
-                        img(src= './assets/img/skill_round.png')
-                        span Git
-                    li.skill__div__item
-                        img(src= './assets/img/skill_round.png')
-                        span Gulp
-                    li.skill__div__item
-                        img(src= './assets/img/skill_round.png')
-                        span Bower
+                    .skill__div__title Workflow
+                    ul.skill__div__list
+                        each item in items
+                            if item.division == "Workflow"
+                                +skill__circle(item.skill, item.value)
+
     section.map-contact
         .map#google-map
         script(src="./assets/js/googleMap.js" async defer)
