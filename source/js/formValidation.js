@@ -32,10 +32,6 @@ var validation = (function () {
 
         _removeError = function () {
             $(this).removeClass('has-error');
-        },
-
-        _clearForm = function (ev) {
-            
         };
 
     return {

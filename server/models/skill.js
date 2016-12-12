@@ -9,7 +9,7 @@
     var aboutModel = mongoose.connection;
 aboutModel.on('error', console.error.bind(console, 'connection error:'));
 aboutModel.once('open', function () {
-        console.log("we're connected!");
+        // console.log("we're connected!");
     });
 
     var skillSchema = mongoose.Schema({
@@ -29,4 +29,3 @@ aboutModel.once('open', function () {
 //         })
 //     })
 module.exports = SkillModel;
-// var jsonParser = bodyParser.json();

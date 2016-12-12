@@ -27,7 +27,7 @@ html(lang='en')
 
             input#tab-about(type='radio', name='tabs', checked='').tab__input
             label(for='tab-about').tab__label
-                i.fa.fa-line-chart
+                i.fa.fa-check-circle-o
                 span About
 
             input#tab-blog(type='radio', name='tabs').tab__input
@@ -39,16 +39,31 @@ html(lang='en')
             label(for='tab-work').tab__label
                 i.fa.fa-diamond
                 span Works
-            form#tab-about__content.tab__content
-                h3.tab__content__title Page "About"
-                +skill__div-admin('Frontend', 'HTML5', 'CSS3', 'Javascript')
-                +skill__div-admin('Backend', 'PHP', 'mySQL', 'Node.js', 'Mongo.db')
-                +skill__div-admin('Workflow', 'Git', 'Gulp', 'Bower')
-                .btn-wrap
-                    button.contact-us__btn.btn-save(type='submit' form='tab-about__content' value="Submit") Save
-            #tab-blog__content.tab__content
-                h3 Page "Blog"
-                p
-            #tab-work__content.tab__content
-                h3 Page "Works"
-                p
+            .tab__contents
+                form#tab-about__content.tab__content
+                    h3.tab__content__title Page "About"
+                    skill__div.skill__div-admin
+                        .skill__div__title.skill__div__title-admin Frontend
+                        each circle in circles
+                            if circle.division == "Frontend"
+                                +skill__circle-admin(circle.skill, circle.value)
+                    skill__div.skill__div-admin
+                        .skill__div__title.skill__div__title-admin Backend
+                        each circle in circles
+                            if circle.division == "Backend"
+                                +skill__circle-admin(circle.skill, circle.value)
+                    skill__div.skill__div-admin
+                        .skill__div__title.skill__div__title-admin Workflow
+                        each circle in circles
+                            if circle.division == "Workflow"
+                                +skill__circle-admin(circle.skill, circle.value)
+
+
+                    .btn-wrap
+                        button.contact-us__btn.btn-save(type='submit' form='tab-about__content' value="Submit") Save
+                #tab-blog__content.tab__content
+                    h3 Page "Blog"
+                    p
+                #tab-work__content.tab__content
+                    h3 Page "Works"
+                    p

@@ -24,6 +24,16 @@ router.get('/blog.html', function (req, res) {
   res.render('blog');
 });
 router.get('/admin.html', function (req, res) {
-  res.render('admin');
+  SkillModel.find({}).sort({order: 1}).exec(function (err, items) {
+    res.render('admin', {circles: items});
+
+  });
+//
+// router.post('/saveSkills', function (req, res) {
+//   SkillModel.find({}).sort({order: 1}).exec(function (err, items) {
+//     res.render('admin', {circles: items});
+//
+//   });
 });
+
 module.exports = router;

@@ -3,10 +3,10 @@
   z-index: -1;
   min-height: 100vh;
   display: flex;
-  //flex-direction:column;
-  align-items: flex-start;
+  flex-direction:column;
+  align-items: stretch;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  min-height: 100vh;
 }
 
 .panel{
@@ -93,12 +93,23 @@
 .tabs label:hover {
   color: $color-green;
 }
+
+.tab__contents{
+  width: 100%;
+  min-height: calc(100vh - 140px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: flex-start;
+}
+
 .tab__content {
   display: none;
   width: 100%;
-  padding: 15px;
+  padding: 30px;
   box-sizing: border-box;
-  max-height: 100%;
+  min-height: calc(100vh - 140px);
+  align-self: flex-start;
 
   &__title{
     flex: 100%;
@@ -107,6 +118,7 @@
 
 .btn-wrap{
   flex: 100%;
+  align-self: flex-end;
 }
 
 .btn-save{
@@ -120,9 +132,10 @@
   justify-content: flex-start;
 }
 
+
 .skill__div-admin{
   display: table;
-  margin: 5px 20px 15px 0px;
+  margin: 5px 5% 15px 0px;
 }
 
 .skill__div__title-admin{
@@ -134,26 +147,32 @@
 
 .skill__div__item-admin{
   display: table-row;
+  height: 50px;
 
 }
 
 .skill__label-admin, .skill__input-admin, .skill__percantage-admin{
   display: table-cell;
-  margin: 5px 10px;
+  margin: 5px 5px;
   padding: 5px;
   border-radius: 3px;
+  vertical-align: middle;
+
 }
 
 .skill__label-admin{
   padding-left: 10px;
   width: 100px;
+  cursor: pointer;;
 }
 
 .skill__input-admin{
   //outline: none;
-  width: 50px;
+  width: 55px;
   text-align: right;
   border: none;
+  font-family:RobotoLight;
+  margin-top: 10px;
 }
 
 
@@ -185,8 +204,8 @@
   color: $color-green;
 }
 
-#tab-about:checked ~ #tab-about__content,
-#tab-work:checked ~ #tab-work__content,
-#tab-blog:checked ~ #tab-blog__content {
+#tab-about:checked ~ .tab__contents #tab-about__content,
+#tab-work:checked ~ .tab__contents #tab-work__content,
+#tab-blog:checked ~ .tab__contents #tab-blog__content {
   display: flex;
 }

@@ -11,16 +11,21 @@ module.exports = function() {
               // '!/server/**/*.*',
               '/server/node_modules/**/*.*',
               '/server/data/**/*.*',
+              '/server/views/**/*.*',
               '/server/public/**/*.*'
           ],
           verbose: true,
           watch: './server',
-          ext: 'js,pug'
+          ext: 'js,pug',
+          // delay: 1 //hack against multiple restart
       }).on('start', function () {
           // to avoid nodemon being started multiple times
           // thanks @matthisk
           if (!started) {
-              cb();
+              setTimeout(function reload() {
+                  cb();
+              }, 500);
+
               started = true;
           }
       }).on('restart', function(){
