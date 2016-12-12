@@ -5,31 +5,17 @@
 (function () {
     $('#tab-about__content').on("submit", function (ev) {
         ev.preventDefault();
-        var ajaxData = $(this);
-        var dbFotmat = ['skill', 'value'];
-        var elements = ajaxData.find('input, textarea').not('input[type="hidden"]');
-        var Data = [];
-        $.each(elements, function (index, element) {
-            var $element = $(element);
-            if ($element.prop("defaultValue") != $element.prop("value")){
-                console.log(Data);
+        var formData = $(this);
+        console.log(formData);
+        var dbFields = ['skill', 'value'];
 
-                console.log($element.prop("value"));
-                console.log($element.prop("id"));
-                Data.push({skill: $element.prop("id"), level: $element.prop("value")});
-                console.log(Data);
-
-            }
-
-        });
-            // console.log(ajaxData);
         // ajax запрос
-        // var defObj = commonAjax.ajaxForm(ajaxData, './saveSkills');
-        // if(defObj){
-        //     console.log('skills updated');
-        //     defObj.done(function (ans) {
-        //         console.log(ans);
-        //     })
-        // }
+        var defObj = commonAjax.ajaxForm(formData, './saveSkills', dbFields);
+        if(defObj){
+            console.log('skills updated');
+            defObj.done(function (ans) {
+                console.log(ans);
+            })
+        }
     })
 })()
