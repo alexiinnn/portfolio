@@ -8,21 +8,20 @@
         var ajaxData = $(this);
         var dbFotmat = ['skill', 'value'];
         var elements = ajaxData.find('input, textarea').not('input[type="hidden"]');
-        var Data = {};
+        var Data = [];
         $.each(elements, function (index, element) {
             var $element = $(element);
             if ($element.prop("defaultValue") != $element.prop("value")){
-                // console.log($element.prop("value"));
-                // console.log($element.prop("id"));
-                Data.append({
-                    dbFotmat[0]:$element.prop("id"),
-                    dbFotmat[1]:$element.prop("value")
-                })
+                console.log(Data);
+
+                console.log($element.prop("value"));
+                console.log($element.prop("id"));
+                Data.push({skill: $element.prop("id"), level: $element.prop("value")});
+                console.log(Data);
 
             }
 
         });
-        console.log(Data);
             // console.log(ajaxData);
         // ajax запрос
         // var defObj = commonAjax.ajaxForm(ajaxData, './saveSkills');
