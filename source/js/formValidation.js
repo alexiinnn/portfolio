@@ -1,9 +1,16 @@
 var validation = (function () {
     var init = function () {
-        _setUpListeners();
-    },
+            _setUpListeners();
+        },
 
         validateForm = function (form) {
+            if ($('#human-checkbox').length > 0) {
+                if ((!$('#human-checkbox').is(":checked")) || (!$('#bot-check__yes').is(":checked"))) {
+                    $('.auth__response').text("Only for human!");
+                    return false;
+
+                }
+            }
             var elements = form.find('input, textarea').not('input[type="hidden"]'),
                 valid = true;
 
@@ -11,7 +18,7 @@ var validation = (function () {
                 var $element = $(element),
                     value = $element.val();
 
-                if(!value.length){
+                if (!value.length) {
                     _addError($element);
                     valid = false;
                     console.log($element);

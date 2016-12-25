@@ -19,6 +19,7 @@ html(lang='en')
 
         title Admin panel
     body.admin
+        include ../_includes/preloader
         include ../_includes/_mixins.pug
         .panel
             h1.panel__title Administration panel
@@ -67,3 +68,6 @@ html(lang='en')
                 #tab-work__content.tab__content
                     h3 Page "Works"
                     p
+    .pop-up.pop-up__log
+        p.pop-up__message
+        button.contact-us__btn.btn-save.pop-up__button(onClick="location.reload()") Ok

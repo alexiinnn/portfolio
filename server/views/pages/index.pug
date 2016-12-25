@@ -56,9 +56,9 @@ html(lang='en')
                         .welcome__menu-backside.auth
                             .auth__title
                                 +dashed-title('Log in', 'color-font-darkgray', 'fz35')
-                            form.auth__form#login(action='script/login.php', method='POST')
+                            form.auth__form#login(role='form', action='/login', method='POST')
                                 .form__item.auth__form__item.auth__form__item-login
-                                    input(type='text', name='login', placeholder='Login')
+                                    input(type='text', name='username', placeholder='Login')
 
                                 .form__item.auth__form__item.auth__form__item-password
                                     input(type='password', name='password', placeholder='Password')
@@ -76,6 +76,7 @@ html(lang='en')
                                         .auth__bot-check__item
                                             input#bot-check__no(name='bot-check', type='radio', value='true')
                                             label(for='bot-check__no') No
+                            .auth__response
                             .auth__btns
                                     button.contact-us__btn.btn-home Home
                                     button.contact-us__btn.btn-clear(type='submit' form='login' value="Submit") Log in
