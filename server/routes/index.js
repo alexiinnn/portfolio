@@ -36,7 +36,7 @@ router.get('/blog.html', function (req, res) {
 //     });
 //
 // router.get('/admin.html', isLoggedIn, function (req, res) {
-router.get('/admin.html', function (req, res) {
+router.get('/admin.html', isLoggedIn, function (req, res) {
     SkillModel.find({}).sort({order: 1}).exec(function (err, items) {
         res.render('admin', {circles: items});
     });
@@ -70,19 +70,14 @@ router.get('/admin.html', function (req, res) {
 
 router.post('/login', function (req, res, next) {
     // return res.redirect(301, '/admin.html');
+    console.log(req.body);
     passport.authenticate('local', (err, user) => {
-        console.log("user,"+user);
-        if (err) {
-            return next(err);
-        }
-        if (!user) {
-        return res.json({status: 'Укажите логин и пароль!'})
-    }
+        console.log("user: " + user);
+    if (err) { return next(err); }
+    if (!user) { return res.json({status: 'Укажите логин и пароль!'}) }
     req.logIn(user, function (err) {
-        if (err) {
-            return next(err);
-        }
-        return res.json({status: 'Все ок, Добро пожаловать'});
+        if (err) { return next(err); }
+        return res.json({status: 'Все ок, Добро пожаловать', redirect: 'admin.html'});
     });
 })(req, res, next);
 });

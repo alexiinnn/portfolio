@@ -4,17 +4,22 @@ var commonAjax = (function () {
         if (!validation.validateForm(formData))
             return false;
         var elements = formData.find('input, textarea').not('input[type="hidden"]');
-        var Data = [];
+        var Data = {};
 
         $.each(elements, function (index, element) {
             var $element = $(element);
             if ($element.prop("defaultValue") != $element.prop("value")){
-                var pushElement = $element.serializeArray();
-                Data.push(pushElement[0]);
+                // var pushElement = $element.serializeArray();
+                // Data.push(pushElement[0]);
+                Data[$element.prop("name")]=$element.prop("value");
+                console.log([$element.prop("name")]);
+                console.log($element.prop("name"));
+                console.log(Data[$element.prop("name")]);
             }
         });
+        console.log(Data);
         var ajaxData = JSON.stringify(Data);
-
+        console.log(ajaxData);
         var result = $.ajax({
             headers: {
                 'Accept': 'application/json',
@@ -27,8 +32,7 @@ var commonAjax = (function () {
             processData: false,
             success: function (ans) {
                 console.log(ans);
-                if (typeof ans.redirect == 'string')
-                    window.location = ans.redirect;
+
             },
             error: function () {
                 console.log('error');

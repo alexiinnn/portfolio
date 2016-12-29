@@ -19,6 +19,9 @@
                 // $('.pop-up__message').text(ans);
                 // $('.pop-up__log').fadeIn();
                 // location.reload();
+                if (typeof ans.redirect == 'string')
+                    console.log("should be redirect");
+                    window.location = ans.redirect;
 
             })
         }
