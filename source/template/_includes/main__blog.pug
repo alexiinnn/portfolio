@@ -4,29 +4,129 @@ main.main__blog
         .sidebar-wrapper
             ul.sidebar__list
                 li.sidebar__item.sidebar__item-active
-                    a(href= '#article-2') The most important in SASS
+                    a(href= '#article-2') CSS only backdrop blur
                 li.sidebar__item
-                    a(href= '#article-1') Admission to imposition, without which it can't do any site
+                    a(href= '#article-1') The very first post
             .swipe
             .swipe-overlay
     section.articles
         article.article.article-2#article-2
-            .article__title The most important in SASS
+            .article__title CSS only backdrop blur
             .article__date 22 November 2016
             .article__text
                 p.
-                  Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+                    All of us like pretty nice interface. Let's take a look at my way create this awesome effect (e.g. probably you've already seen it in iOS interface) - css only blur for changable background or backdrop-filter blur.
+                img.article__img
                 p.
-                  Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.
-                code.
-                    some code
+                    I saw js+css realization, but it didn't want work at my project(these portfolio), so I spend some time to find this hack in my own way.
+                p
+                    | First of all, you can find css-property backdrop-filter blur in
+                    a(href='https://webkit.org/blog/3632/introducing-backdrop-filters/') nightly build
+                    | of WebKit . What about others? Now you can use this method:
+                pre.prettyprint.
+                    .contact-us {
+                      padding: 0 10px;
+
+
+                      &__wrapper {
+                        max-width: 380px;
+                        width: 100%;
+                        display: block;
+                        width: auto;
+                        border-radius: 5px;
+                        overflow: hidden;
+                        text-align: center;
+                        margin: 0 auto;
+                        position: relative;
+                        overflow: hidden;
+                        z-index: 1;
+
+                        &:before{
+                              background: url("../img/back-bottom.jpg") 50% 50% no-repeat;
+                              content: '';
+                              background-size: 1710px 1307px;
+                              margin-top: -327px;
+                              position: absolute;
+                              top: 0;
+                              right: 0;
+                              bottom: 0;
+                              left: 0;
+                              filter: blur(10px);
+                              z-index: -1;
+                p.
+                    Unfortunately top div won't fit exactly as background, so you need little position fix
+                pre.prettyprint.
+                    background-size: 1710px 1307px;
+                    margin-top: -327px;
+                p.
+                    It depends on vewport, i don't know correlation and if it exist at all (may be i will do some research on this). You need set this fix for every media queries.
+                pre.prettyprint.
+                    @include responsive(tablet){
+                      margin-top: -196px;
+                    }
+                    @include responsive(mobile){
+                      margin-top: -327px;
+                      background-size: 1900px 1463px;
+                    }
+                p.
+                    In the end you got such code:
+                pre.prettyprint.
+                    .contact-us {
+                      padding: 0 10px;
+
+
+                      &__wrapper {
+                        max-width: 380px;
+                        width: 100%;
+                        display: block;
+                        width: auto;
+                        border-radius: 5px;
+                        overflow: hidden;
+                        text-align: center;
+                        margin: 0 auto;
+                        position: relative;
+                        overflow: hidden;
+                        z-index: 1;
+
+                        &:before{
+                          background: url("../img/back-bottom.jpg") 50% 50% no-repeat;
+                          content: '';
+                          background-size: 1710px 1307px;
+                          margin-top: -327px;
+                          position: absolute;
+                          top: 0;
+                          right: 0;
+                          bottom: 0;
+                          left: 0;
+                          filter: blur(10px);
+                          z-index: -1;
+
+                          @include responsive(tablet){
+                            margin-top: -196px;
+                          }
+                          @include responsive(mobile){
+                            margin-top: -327px;
+                            background-size: 1900px 1463px;
+                          }
+                        }
+                      }
+                    }
+                p In waiting for backdrop-filter
+
         article.article.article-1#article-1
-            .article__title Admission to imposition, without which it can't do any site
+            .article__title The very first post
             .article__date 22 November 2016
             .article__text
                 p.
-                    Таким образом начало повседневной работы по формированию позиции позволяет выполнять важные задания по разработке направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности играет важную роль в формировании новых предложений. Товарищи! новая модель организационной деятельности играет важную роль в формировании систем массового участия.
+                    This article is starting my blog. I'll try to publish issues that I faced and fancy tips about web development.
                 p.
-                    Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.                        code.
+                    Also I should say at this day I'm sophomore in web development and can't give expert advice for you. But I will share best of me. I hope it will change soon.
                 p.
-                    Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.                        code.
+                    I think this blog will fit for rookies. I'll very glad if any of my posts helps you.
+                p.
+                    Whether or no, classic start: "Hello world!"
+
+                code.prettyprint.
+                    < Hello world \>
+
+

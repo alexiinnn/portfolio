@@ -12,14 +12,14 @@ var commonAjax = (function () {
                 // var pushElement = $element.serializeArray();
                 // Data.push(pushElement[0]);
                 Data[$element.prop("name")]=$element.prop("value");
-                console.log([$element.prop("name")]);
-                console.log($element.prop("name"));
-                console.log(Data[$element.prop("name")]);
+                // console.log([$element.prop("name")]);
+                // console.log($element.prop("name"));
+                // console.log(Data[$element.prop("name")]);
             }
         });
-        console.log(Data);
+        // console.log(Data);
         var ajaxData = JSON.stringify(Data);
-        console.log(ajaxData);
+        // console.log(ajaxData);
         var result = $.ajax({
             headers: {
                 'Accept': 'application/json',
@@ -31,7 +31,7 @@ var commonAjax = (function () {
             // async: false,
             processData: false,
             success: function (ans) {
-                console.log(ans);
+                // console.log(ans);
 
             },
             error: function () {

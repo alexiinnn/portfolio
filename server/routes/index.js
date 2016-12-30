@@ -74,10 +74,10 @@ router.post('/login', function (req, res, next) {
     passport.authenticate('local', (err, user) => {
         console.log("user: " + user);
     if (err) { return next(err); }
-    if (!user) { return res.json({status: 'Укажите логин и пароль!'}) }
+    if (!user) { return res.json({status: 'Invalid username or password'}) }
     req.logIn(user, function (err) {
         if (err) { return next(err); }
-        return res.json({status: 'Все ок, Добро пожаловать', redirect: 'admin.html'});
+        return res.json({status: 'OK!', redirect: 'admin.html'});
     });
 })(req, res, next);
 });
@@ -103,23 +103,41 @@ router.post('/login', function (req, res, next) {
 
 router.post('/saveSkills', function (req, res) {
     var items = req.body;
-    var willUpdated = items.length;
-
+    var willUpdated = Object.keys(items).length;
+    console.log("willUpdated "+willUpdated);
     var countUpdated = 0;
-    items.forEach(function (item) {
-        SkillModel.findOneAndUpdate({skill: item.name}, {
-            value: item.value
+
+    for (var key in items) {
+        if (items.hasOwnProperty(key)) {
+            console.log(key + " -> " + items[key]);
+        }
+        SkillModel.findOneAndUpdate({skill: key}, {
+            value: items[key]
         }, function (err) {
             if (err) return res.send(500, {error: err});
             countUpdated++
             console.log(countUpdated);
             if (countUpdated === willUpdated) {
                 return res.send(countUpdated + " skill(s) updated");
-            }
-            ;
+            };
         })
-    });
+    };
 });
+
+    // var countUpdated = 0;
+//     items.forEach(function (item) {
+//         SkillModel.findOneAndUpdate({skill: item.name}, {
+//             value: item.value
+//         }, function (err) {
+//             if (err) return res.send(500, {error: err});
+//             countUpdated++
+//             console.log(countUpdated);
+//             if (countUpdated === willUpdated) {
+//                 return res.send(countUpdated + " skill(s) updated");
+//             }
+//             ;
+//         })
+//     });
 
 
 router.get('/logout', function (req, res) {

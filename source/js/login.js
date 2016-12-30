@@ -14,13 +14,13 @@
         var defObj = commonAjax.ajaxForm(formData, './login');
         if(defObj){
             defObj.done(function (ans) {
+                $('.auth__response').text(ans['status']);
                 // $('.preloader').fadeOut();
-                console.log("after"+ans);
+                // console.log("after"+ans);
                 // $('.pop-up__message').text(ans);
                 // $('.pop-up__log').fadeIn();
                 // location.reload();
                 if (typeof ans.redirect == 'string')
-                    console.log("should be redirect");
                     window.location = ans.redirect;
 
             })
