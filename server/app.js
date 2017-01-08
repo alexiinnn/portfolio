@@ -21,7 +21,7 @@ var UserModel = require(path.resolve(__dirname, "./models/user.js"));
 
 
 //db
-mongoose.connect('mongodb://whoisadmin:Par0oool@127.0.0.1/portfolio');
+mongoose.connect('mongodb://login:***@127.0.0.1/portfolio');
 mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
 
 var app = express();
