@@ -1,4 +1,3 @@
-// dependencies
 var express = require('express');
 var path = require('path');
 // var favicon = require('serve-favicon');
@@ -10,19 +9,20 @@ var passport = require('passport');
 var flash = require('connect-flash');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
-// var routes = require('./routes/index')(passport);
 var LocalStrategy = require('passport-local').Strategy;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
+var configDB = require('./config/database.js');
 
-var UserModel = require(path.resolve(__dirname, "./models/user.js"));
-
-
+// configuration ===============================================================
 //db
-mongoose.connect('mongodb://whoisadmin:Par0oool@127.0.0.1/portfolio');
+mongoose.connect(configDB.url); // connect to our database
 mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
+
+//models
+var UserModel = require(path.resolve(__dirname, "./models/user.js"));
 
 var app = express();
 
@@ -35,8 +35,8 @@ passport.serializeUser(function (user, done) {
 
 passport.deserializeUser(function (id, done) {
     console.log('deserializeUser');
-    UserModel.findById(id, function(err, user) {
-      done(err, user);
+    UserModel.findById(id, function (err, user) {
+        done(err, user);
     });
     // done(null, user);
 });

@@ -38,6 +38,8 @@ build
 node_modules
 npm-debug.log
 server/node_modules
+server/bower_components
+server/config
 server/data
 mongodb.config
 bash.exe.stackdump
