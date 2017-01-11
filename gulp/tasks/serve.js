@@ -4,7 +4,7 @@ module.exports = function() {
   $.gulp.task('serve' ,function() {
     $.browserSync.init({
       open: false,
-      proxy: 'localhost:8000',
+      proxy: '127.0.0.1:8000',
       logFileChanges: true
       // port: 7000,
       // notify: true
