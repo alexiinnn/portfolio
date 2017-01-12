@@ -116,60 +116,68 @@ $button-width: 30px;
     list-style: none;
     padding: 0;
     margin: 0 auto;
-    display: inline-block;
+    display: flex;
     position: relative;
     height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 
     li {
-      display: block;
-      height: 25%;
-      height: calc(100% / 4);
+      flex:1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       min-height: 50px;
       position: relative;
       opacity: 0;
+
+      &:after,
+      &:before{
+        content: '';
+        position: absolute;
+        bottom: 50%;
+        margin-top: -50%;
+        width: 0;
+        opacity: 0;
+        height: 5px;
+        background: $color-link;
+        transition: .4s;
+
+        @include responsive(tablet){
+          display: none;
+        }
+      }
+
+      &:before{
+        margin-left: -45px;
+        left: 0;
+      }
+
+      &:after{
+        right: 0;
+        margin-right: -45px;
+      }
+
+      &:hover:after,
+      &:focus:after,
+      &:active:after,
+      &:hover:before,
+      &:focus:before,
+      &:active:before {
+        width: 22px;
+        opacity: 1;
+      }
+
+
 
       a {
         position: relative;
         color: $color-link;
         text-decoration: none;
         overflow: hidden;
+        display: block;
 
-        &:hover:after,
-        &:focus:after,
-        &:active:after,
-        &:hover:before,
-        &:focus:before,
-        &:active:before {
-          width: 22px;
-          opacity: 1;
-        }
-
-        &:after,
-        &:before{
-          @include responsive(tablet){
-            display: none;
-          }
-
-          content: '';
-          position: absolute;
-          bottom: 50%;
-          //margin-top: -50%;
-          width: 0;
-          opacity: 0;
-          height: 5px;
-          background: $color-link;
-          transition: .5s;
-        }
-
-        &:before{
-          margin-left: -52px;
-          left: 0;
-        }
-
-        &:after{
-          right: 0;
-          margin-right: -52px;
-        }
       }
     }
   }
