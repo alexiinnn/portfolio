@@ -6,15 +6,18 @@
 (function () {
     $('#contact-us').on("submit", function (ev) {
         ev.preventDefault();
-        $('.btn-send').text("Sending...");
+        var $btnSend = $('.btn-send');
+        $btnSend.prop("disabled",true);
+        $btnSend.text("Sending...");
         // $('.preloader').fadeIn();
         var formData = $(this);
-        console.log(formData);
+        // console.log(formData);
         // ajax запрос
         var defObj = commonAjax.ajaxForm(formData, './message');
         if(defObj){
             defObj.done(function (ans) {
-                $('.btn-send').text("Done");
+                $btnSend.text("Done");
+
                 // $('.preloader').fadeOut();
                 // console.log("after"+ans);
                 // $('.pop-up__message').text(ans);

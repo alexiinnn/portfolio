@@ -6,6 +6,10 @@ const router = express.Router();
 const SkillModel = require("../models/skill");
 const UserModel = require("../models/user");
 
+const configMail = require("../config/mail");
+
+//mail
+var transporter = nodemailer.createTransport(configMail.url);
 
 /* GET home page. */
 router.get(['/', '/index.html'], function (req, res, next) {
@@ -86,15 +90,23 @@ router.post('/login', function (req, res, next) {
 router.post('/message', function (req, res, next) {
     // return res.redirect(301, '/admin.html');
     console.log(req.body);
+
+    // setup e-mail data with unicode symbols
     var mailOptions = {
-        from: '"Fred Foo ?" <foo@blurdybloop.com>', // sender address
-        to: 'bar@blurdybloop.com, baz@blurdybloop.com', // list of receivers
-        subject: 'Hello ✔', // Subject line
-        text: 'Hello world ?', // plaintext body
-        html: '<b>Hello world ?</b>' // html body
+        from: configMail.sender, // sender address
+        to: configMail.recipient, // list of receivers
+        subject: configMail.topic, // Subject line
+        // text: req.body.message, // plaintext body
+        html: configMail.html // html body
     };
 
-    console.log(mailOptions);
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, function(error, info){
+        if(error){
+            return console.log(error);
+        }
+        console.log('Message sent: ' + info.response);
+    });
 });
 
 // router.post('/login', function (req, res, next) {

@@ -6,6 +6,7 @@ module.exports = function() {
       return $.nodemon({
           // the script to run the app
           script: './server/bin/www',
+          watch: './server',
           ignore: [
               // '**/*.*',
               // '!/server/**/*.*',
@@ -15,7 +16,6 @@ module.exports = function() {
               '/server/public/**/*.*'
           ],
           verbose: true,
-          watch: './server',
           ext: 'js,pug',
           // delay: 1 //hack against multiple restart
       }).on('start', function () {

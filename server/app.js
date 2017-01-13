@@ -23,8 +23,6 @@ var configMail = require('./config/mail.js');
 mongoose.connect(configDB.url); // connect to our database
 mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
 
-//mail
-nodemailer.createTransport(configMail.url);
 
 //models
 var UserModel = require(path.resolve(__dirname, "./models/user.js"));

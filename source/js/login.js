@@ -9,13 +9,13 @@
         $('.auth__response').text("");
         // $('.preloader').fadeIn();
         var formData = $(this);
-        console.log(formData);
+        // console.log(formData);
         // ajax запрос
         var defObj = commonAjax.ajaxForm(formData, './login');
         if(defObj){
             defObj.done(function (ans) {
                 $('.auth__response').text(ans['status']);
-                $('.preloader').fadeOut();
+                // $('.preloader').fadeOut();
                 // console.log("after"+ans);
                 // $('.pop-up__message').text(ans);
                 // $('.pop-up__log').fadeIn();
