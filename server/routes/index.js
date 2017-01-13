@@ -1,5 +1,6 @@
 const express = require('express');
 const passport = require('passport');
+var nodemailer = require('nodemailer');
 const router = express.Router();
 
 const SkillModel = require("../models/skill");
@@ -80,6 +81,20 @@ router.post('/login', function (req, res, next) {
         return res.json({status: 'OK!', redirect: 'admin.html'});
     });
 })(req, res, next);
+});
+
+router.post('/message', function (req, res, next) {
+    // return res.redirect(301, '/admin.html');
+    console.log(req.body);
+    var mailOptions = {
+        from: '"Fred Foo ?" <foo@blurdybloop.com>', // sender address
+        to: 'bar@blurdybloop.com, baz@blurdybloop.com', // list of receivers
+        subject: 'Hello ✔', // Subject line
+        text: 'Hello world ?', // plaintext body
+        html: '<b>Hello world ?</b>' // html body
+    };
+
+    console.log(mailOptions);
 });
 
 // router.post('/login', function (req, res, next) {
