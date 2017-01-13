@@ -5,10 +5,11 @@
 //script for rendering Google Map
 var map;
 
-function initMap() {
+window.initMap = function() {
     // Styles a map in night mode.
     var map = new google.maps.Map(document.getElementById('google-map'), {
         center: {lat: 53.900326, lng: 27.562330},
+        scrollwheel: false,
         zoom: 15,
         zoomControlOptions: {
             position: google.maps.ControlPosition.RIGHT_TOP

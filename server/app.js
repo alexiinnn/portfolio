@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
+var nodemailer = require('nodemailer');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 var LocalStrategy = require('passport-local').Strategy;
@@ -15,11 +16,15 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var configDB = require('./config/database.js');
+var configMail = require('./config/mail.js');
 
 // configuration ===============================================================
 //db
 mongoose.connect(configDB.url); // connect to our database
 mongoose.connection.on('error', console.error.bind(console, 'connection error:'));
+
+//mail
+nodemailer.createTransport(configMail.url);
 
 //models
 var UserModel = require(path.resolve(__dirname, "./models/user.js"));

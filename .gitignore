@@ -41,7 +41,6 @@ server/node_modules
 server/bower_components
 server/config
 server/data
-server/config
 mongodb.config
 bash.exe.stackdump
 dbDump

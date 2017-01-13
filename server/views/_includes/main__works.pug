@@ -15,7 +15,7 @@ main.main__works
         .contact-us
             .contact-us__wrapper
                 +dashed-title('Contact me', 'color-font-darkgrey', 'fz35')
-                form.contact-us__form#contact-us(action='script/message.php', method='POST')
+                form.contact-us__form#contact-us(action='/message', method='POST')
                     ul.contact-us__form__list
                         li.contact-us__form__item
                             input(type='text', name='name', placeholder='Name')
