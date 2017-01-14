@@ -97,7 +97,8 @@ router.post('/message', function (req, res, next) {
         to: configMail.recipient, // list of receivers
         subject: configMail.topic, // Subject line
         // text: req.body.message, // plaintext body
-        html: configMail.html // html body
+        // html: configMail.html // html body
+        html: configMail.html1+req.body.email+configMail.html2+req.body.message+configMail.html3 // html body
     };
 
     // send mail with defined transport object

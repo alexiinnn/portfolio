@@ -215,6 +215,11 @@
     background: rgba($color-green, 0.7);
   }
 
+  &:disabled{
+    cursor: default;
+    background: rgba($color-green, 0.2);
+  }
+
   &:first-child{
     border-right: 1px solid rgba($color-font-white, .5);
   }
