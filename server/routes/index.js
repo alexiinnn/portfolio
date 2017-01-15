@@ -32,46 +32,11 @@ router.get('/blog.html', function (req, res) {
 });
 
 
-// router.post('/login',
-//     passport.authenticate('local'),
-//     function(req, res) {
-//         // If this function gets called, authentication was successful.
-//         // `req.user` contains the authenticated user.
-//         res.redirect('/admin.html');
-//     });
-//
-// router.get('/admin.html', isLoggedIn, function (req, res) {
 router.get('/admin.html', isLoggedIn, function (req, res) {
     SkillModel.find({}).sort({order: 1}).exec(function (err, items) {
         res.render('admin', {circles: items});
     });
 });
-
-// router.post('/login', passport.authenticate('local', { failureRedirect: '/', failureFlash: true }), (req, res, next) => {
-//     console.log(req.body);
-//     req.session.save((err) => {
-//         if (err) {
-//             console.log("posr err");
-//             return next(err);
-//         }
-//         console.log("post suc");
-//         res.redirect('/admin.html');
-//     });
-// });
-//
-// router.post('/login', passport.authenticate('local', {
-//     failureRedirect: '/blog.html',
-//     failureFlash: true
-// }), (req, res, next) => {
-//     // req.session.save((err) => {
-//     //     if (err) {
-//     //         console.log('post err');
-//     //         return next(err);
-//     //     }
-//     //     res.redirect('/blog.html');
-//     // });
-//
-// });
 
 router.post('/login', function (req, res, next) {
     // return res.redirect(301, '/admin.html');
@@ -104,30 +69,13 @@ router.post('/message', function (req, res, next) {
     // send mail with defined transport object
     transporter.sendMail(mailOptions, function(error, info){
         if(error){
-            return console.log(error);
+            console.log(error);
+            return res.json('Error');
         }
         console.log('Message sent: ' + info.response);
+        return res.json('Done');
     });
 });
-
-// router.post('/login', function (req, res, next) {
-//     passport.authenticate('local', function (err, user, info) {
-//         if (err) {
-//             return next(err);
-//         }
-//         // Redirect if it fails
-//         if (!user) {
-//             return res.redirect('/about.html');
-//         }
-//         req.logIn(user, function (err) {
-//             if (err) {
-//                 return next(err);
-//             }
-//             // Redirect if it succeeds
-//             return res.redirect('/users/' + user.username);
-//         });
-//     })(req, res, next);
-// });
 
 router.post('/saveSkills', function (req, res) {
     var items = req.body;
@@ -151,21 +99,6 @@ router.post('/saveSkills', function (req, res) {
         })
     };
 });
-
-    // var countUpdated = 0;
-//     items.forEach(function (item) {
-//         SkillModel.findOneAndUpdate({skill: item.name}, {
-//             value: item.value
-//         }, function (err) {
-//             if (err) return res.send(500, {error: err});
-//             countUpdated++
-//             console.log(countUpdated);
-//             if (countUpdated === willUpdated) {
-//                 return res.send(countUpdated + " skill(s) updated");
-//             }
-//             ;
-//         })
-//     });
 
 
 router.get('/logout', function (req, res) {

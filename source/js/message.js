@@ -16,8 +16,8 @@
         var defObj = commonAjax.ajaxForm(formData, './message');
         if(defObj){
             defObj.done(function (ans) {
-                $btnSend.text("Done");
-
+                console.log(ans);
+                $btnSend.text(ans);
                 // $('.preloader').fadeOut();
                 // console.log("after"+ans);
                 // $('.pop-up__message').text(ans);
