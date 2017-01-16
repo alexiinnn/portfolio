@@ -2,10 +2,10 @@
 //Mouse parallax
 
 var layer = $('.parallax').find('.parallax__layer');
+var lastBg = layer.first().find('img');
 
 //set backround size
 var setBgSize = function () {
-    var lastBg = layer.first().find('img');
     var bgImgWidthRate = (document.documentElement.scrollHeight * lastBg.prop('naturalWidth') / (window.innerWidth * lastBg.prop('naturalHeight')));
     if (bgImgWidthRate < 1) {
         var bgImgHeightRate = 1 / bgImgWidthRate;
@@ -17,7 +17,10 @@ var setBgSize = function () {
 
 }
 
-setBgSize();
+lastBg.load(function() {
+    setBgSize();
+});
+
 
 $(window).on('resize', function (ev) {
     setBgSize(ev);
