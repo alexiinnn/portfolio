@@ -41,7 +41,7 @@
 .work__desc__list{
   display: flex;
   flex-direction: column;
-  height: 300%;
+  height: 400%;
 
   @include responsive(tablet){
     position: relative;
