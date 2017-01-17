@@ -41,11 +41,11 @@
 .work__desc__list{
   display: flex;
   flex-direction: column;
-  height: 400%;
+  //height: 400%;
 
   @include responsive(tablet){
     position: relative;
-    height: auto;
+    //height: auto;
     margin: 0 auto;
   }
 }
