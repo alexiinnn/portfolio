@@ -7,7 +7,6 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
-var nodemailer = require('nodemailer');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 var LocalStrategy = require('passport-local').Strategy;

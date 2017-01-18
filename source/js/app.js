@@ -14,6 +14,9 @@ var eventListeners = (function () {
         $('.slider__arrow-down').on('click', _sliderPrev);
         $('.slider__arrow-up').on('click', _sliderNext);
         $('.button_container').on('click', _hideScroll);
+        $('.btn-clear').on('click', _resetMessageForm);
+        $(document).ready(_initSlider);
+        $(window).on('resize', _initSlider);
     };
 
     // NAVigation
@@ -81,6 +84,23 @@ var eventListeners = (function () {
     //toggle scroll bar on nav expand
     var _hideScroll = function (ev) {
         $('body').toggleClass('hide-scroll');
+    }
+
+    //reset message form
+    var _resetMessageForm = function (ev) {
+        $('.btn-send').prop('disabled', false).text('Send');
+    }
+
+    //set slider description height
+    var _initSlider = function (ev) {
+        $work__desc__list = $('.work__desc__list');
+        if (window.innerWidth<=992){
+            $work__desc__list.css('height', 'auto');
+        }
+        else{
+            var desktopHeight = $('.work__desc__item').length*100+'%';
+            $work__desc__list.css('height', desktopHeight);
+        }
     }
 
     return {

@@ -132,6 +132,10 @@
   &:hover, &:active{
     background: $button-green-active;
   }
+
+  &:disabled{
+    background: $button-green-disable;
+  }
 }
 
 .social__welcome{
