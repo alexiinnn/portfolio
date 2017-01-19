@@ -24,6 +24,10 @@ $(function () {
             }
         }
     });
+
+    if(imgs.length==0){
+        return $('.preloader').fadeOut();
+    }
     var percentsTotal = 1;
 
     for (var i = 0; i < imgs.length; i++) {
