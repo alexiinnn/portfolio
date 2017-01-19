@@ -7,12 +7,10 @@
     $('#login').on("submit", function (ev) {
         ev.preventDefault();
         $('.auth__response').text("");
-        $('.btn-login').prop('disabled', true).text('Logging in...');
-        // $('.preloader').fadeIn();
-        var formData = $(this);
-        // console.log(formData);
         // ajax запрос
+        var formData = $(this);
         var defObj = commonAjax.ajaxForm(formData, './login');
+
         if(defObj){
             defObj.done(function (ans) {
                 if (typeof ans.redirect == 'string'){

@@ -44,7 +44,7 @@ router.post('/login', function (req, res, next) {
     passport.authenticate('local', (err, user) => {
         console.log("user: " + user);
     if (err) { return next(err); }
-    if (!user) { return res.json({status: 'Invalid username or password'}) }
+    if (!user) { return res.json({status: "Sorry, it's a private party"}) }
     req.logIn(user, function (err) {
         if (err) { return next(err); }
         return res.json({status: 'OK!', redirect: 'admin.html'});

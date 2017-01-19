@@ -6,7 +6,7 @@ var validation = (function () {
         validateForm = function (form) {
             if ($('#human-checkbox').length > 0) {
                 if ((!$('#human-checkbox').is(":checked")) || (!$('#bot-check__yes').is(":checked"))) {
-                    $('.auth__response').text("Only for human!");
+                    $('.auth__response').text("Human only!");
                     return false;
 
                 }
